@@ -1,0 +1,47 @@
+<form class="row admin_info_form">
+    <h3>Administrator Information</h3>
+    
+    <div class="row">
+    	<div class="large-12 columns"><hr /></div>
+    </div>
+    
+    <div class="row">
+        <div class="large-11 columns">
+            <div class="row">
+                <div class="large-6 columns">
+                    <input type="text" name="first_name" placeholder="First Name"
+                        <%= (el)-> VALID.render(LANG.errors, admin, 'first_name', el) %> />
+                </div>
+                <div class="large-6 columns">
+                    <input type="text" name="last_name" placeholder="Last Name"
+                        <%= (el)-> VALID.render(LANG.errors, admin, 'last_name', el) %> />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="large-11 columns">
+            <input type="text" name="phone" placeholder="Phone Number" class="large-6 columns"
+                    <%= (el)-> VALID.render(LANG.errors, admin, 'phone', el) %>/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-11 columns">
+            <input type="email" name="email" placeholder="Email"
+                    <%= (el)-> VALID.render(LANG.errors, admin, 'email', el) %> />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="large-11 columns">
+            <input type="email" name="confirm_email" placeholder="Confirm Email Address"
+                    <%= (el)-> VALID.render(LANG.errors, admin, 'confirm_email', el) %> />
+        </div>
+
+    </div>
+
+</form>

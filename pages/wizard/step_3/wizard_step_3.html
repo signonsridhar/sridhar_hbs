@@ -1,0 +1,72 @@
+<div class="row">
+
+    <div class="large-12 columns">
+        
+        <div class="row wizard_header">
+            <div class="large-11 columns">
+                <h4> <%= LANG.you_configured_lines %> </h4>
+                <span class="caption"></span>
+            </div>
+        </div>
+
+
+        
+        <div clas="row">
+            <div class="large-12 large-centered columns">
+
+                <div class="wizard_title">
+                    <div class="row">
+                        <div class="large-12 columns"><%= LANG.configured_lines %></div>
+                    </div>
+                </div>
+
+                
+                <%  bundles.each(function(bundle_elem, idx, list){ %>
+                <div class="configured_lines">
+                    <div class="row">
+                        <div class="large-1 columns"><span name="extension"><%= bundle_elem.attr('extensions.0.extension_number')%></span></div>
+                        <div class="large-2 columns"><span name="phone"><%= bundle_elem.attr('extensions.0.devices.0.device_name')%></span></div>
+                        <div class="large-2 columns"><span name="phone_number"><%= bundle_elem.attr('extensions.0.phone_numbers.0.phonenumber')%></span></div>
+                        <div class="large-3 columns">
+                            <span name="first_name" class="name"><%= bundle_elem.attr('user.first_name')%></span>
+                            <span name="last_name" class="name"><%= bundle_elem.attr('user.last_name')%></span>
+                        </div>
+                        <div class="large-3 columns"><span name="email"><%= bundle_elem.attr('user.email')%></span></div>
+                    </div>
+                </div>    
+                <% }) %>
+                
+
+                <div class="shipping_info">
+
+                    <div class="row">
+                        <%= LANG.order_number %> <strong><%= viewmodel.attr('summary.purchase_summary.order_number') %></strong>.
+                        <%
+                            var summary =  viewmodel.attr('summary')
+                            if(summary.attr('purchase_summary.total_amount_after_taxes')){
+                        %>
+                                <%= LANG.total_of %> $<%= summary.attr('purchase_summary.total_amount_after_taxes') %> <%= LANG.will_be_charged %> <%= summary.attr('purchase_summary.credit_card.card_type') %> <%= summary.attr('purchase_summary.credit_card.number') %> <%= LANG.upon_shipment_of_phones %>.
+                        <% } %>
+
+                        <%= LANG.receipt_sent %> <%=tenant.attr('admin') %>.
+                    </div>
+
+                    <div class="row">
+                        <%= LANG.shipping_address_msg %>
+                        <%= tenant.attr('primary_address_street1') ? tenant.attr('primary_address_street1')+',' : '' %>
+                        <%= tenant.attr('primary_address_street2') ? tenant.attr('primary_address_street2')+',' : '' %>
+                        <%= tenant.attr('primary_address_city') ? tenant.attr('primary_address_city')+',' : '' %>
+                        <%= tenant.attr('primary_address_state') ? tenant.attr('primary_address_state')+',' : '' %>
+                        <%= tenant.attr('primary_address_zip') ? tenant.attr('primary_address_zip') : '' %>
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+        
+
+
+    </div>
+</div>

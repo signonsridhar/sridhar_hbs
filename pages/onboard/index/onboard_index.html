@@ -1,0 +1,62 @@
+<div class="top_level_container">
+
+
+<div class="row onboard_index">
+	
+    <div class="row steps_container_js"></div>
+
+    <div class="row forms_container">
+        <div class="cache" style="display:none"></div>
+        <div class="large-8 columns content_container onboard_content_container_js">
+
+        </div>
+
+        <div class="large-4 columns hovering_plan_container hovering_plan_container_js">
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="buttons_divider"><hr /></div>
+
+        <div class="large-3 columns">
+            
+            <div class="buttons_container cf">
+                <% if (curr_step() > 1 && curr_step() < total_steps) { %>
+                <a class="arrow_left step_button arrowCompanyInfo prev_js enabled" href="#!/onboard/step_<%= curr_step() - 1%>">
+
+                    <span class="stepText"><%= LANG.buttons['prev'] %></span>
+                </a>
+                <% } %>
+                
+
+            </div>
+            
+        </div>
+
+        <div class="large-6 columns"></div>
+
+
+        <div class="large-3 columns">
+        
+            <div class="buttons_container cf">
+
+                <% if (curr_step() < total_steps) { %>
+
+                <a class="arrowSelectNumber step_button <%= validity() ? 'enabled_js':'disabled_js' %>
+                                                        <%= (curr_step() + 1) < total_steps? 'arrow_right':'arrow_complete' %> next_js"
+                   href="#!/onboard/step_<%= curr_step() + 1%>">
+                    <span class="stepText"><%= LANG.buttons[ (curr_step() + 1) < total_steps? 'next':'complete'] %></span>
+                </a>
+
+                <% } %>
+
+                </div>
+            
+            </div>
+
+    </div>
+</div>
+
+</div> <!-- top_level_container end -->

@@ -1,0 +1,20 @@
+<form class="row settings_edit_item">
+    <fieldset>
+        <legend><%= _.template(LANG.title, {name:name}) %></legend>
+        
+        <div class="large-9 columns">
+            <select name="extension">
+                <%
+                var extensions = this.viewmodel.attr('extensions');
+                for(var i = 0; i < extensions.length; i++){
+                    var extension = extensions[i]
+                %>
+                <option value="<%= extension %>"><%= extension %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="large-3 columns">
+            <input type="submit" class="button2 right" value="Save" />
+        </div>
+    </fieldset>
+</form>

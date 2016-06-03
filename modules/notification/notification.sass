@@ -1,0 +1,27 @@
+@import "_constants"
+
+.status_container_js
+    margin-bottom: 7px
+
+
+    .status_info,
+    .cc_status_info_js
+        background-color: #ECFC99
+        font-size: 12px
+        padding: 7px 10px 3px
+        $list: 3px
+        +border_radius($list...) 
+        +box_shadow(1px 2px 3px #CCCCCC)
+
+
+        .close
+            display: inline-block !important
+            height: 17px
+            width: 15px
+            cursor: pointer
+            background:
+                image: url($SPRITE_IMAGES)
+                repeat: no-repeat
+                position: -180px -38px
+
+

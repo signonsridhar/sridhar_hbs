@@ -1,0 +1,37 @@
+@import "_constants"
+
+.phone_container_js
+  padding: 0 !important
+  overflow: hidden !important
+
+  .phone_selector_search_form_container_js
+    @extend .input_style
+
+.phone_list_js
+  .selected_js
+    .phone_list_row_container
+      background-color: $LIGHT_BLUE !important
+      $list: 3px
+      @include border_radius($list...)
+      color: black
+
+  li
+    padding: 0px !important
+    .phone_list_row_container
+      &:hover
+        background-color: #FAFAFA
+
+.phone_num_selector_js
+  padding: 10px 5px
+
+  .phone_numbers_top_container
+    height: 175px
+
+  .phone_list_row_container
+    padding: 5px 10px
+    border-bottom: 1px solid #DDDDDD
+    font-size: 14px
+    color: #777888
+    &:hover
+      color: black
+      font-size: 15px

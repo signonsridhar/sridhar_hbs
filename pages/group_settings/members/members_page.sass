@@ -1,0 +1,131 @@
+@import "_constants"
+
+
+.add_group_member_container_js
+    padding: 0 !important
+    overflow: hidden !important
+
+    .member_selector_form_container_js
+        @extend .input_style
+
+.phone_list_js
+    .selected_js
+        .phone_list_row_container
+            background-color: $LIGHT_BLUE !important
+            $list: 3px
+            @include border_radius($list...)
+            color: black
+
+    li
+        padding: 0px !important
+
+    &:hover
+        background-color: #FAFAFA
+
+.phone_num_selector_js
+    padding: 10px 5px
+
+    .phone_numbers_top_container
+        height: 175px
+
+    .phone_list_row_container
+        padding: 5px 10px
+        border-bottom: 1px solid #DDDDDD
+        font-size: 14px
+        color: #777888
+    &:hover
+        color: black
+        font-size: 15px
+
+
+
+
+$GROUP_BUTTONS: "#{$BASE_URL}pages/account/index/img/account_buttons.png"
+$JQUERY_SPRITE: "#{$BASE_URL}libs/jquery/ui/images/ui-icons_222222_256x240.png"
+
+
+
+.group_container
+    
+    .header
+        margin-bottom: 20px
+
+        .title
+            color: #000000
+            font-size: 24px
+            line-height: 20px
+            padding-bottom: 5px
+
+        .button_green
+            @extend .button_green
+            width: 135px
+
+        .add_group_members_btn
+            span
+                background:
+                    image: url("img/icon_add_white.png")
+                    repeat: no-repeat
+                padding-left: 17px
+
+    .boxed
+        background-color: #FFFFFF
+        border-radius: 2px
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
+        line-height: 20px
+        margin-bottom: 10px
+        padding: 10px 20px
+
+        .ui-sortable
+            border-bottom: 1px solid #DDDDDD
+            margin: 0 0 5px
+            width: 100%
+            display: inline-block
+            margin-left: -10px
+            list-style-type: none
+            
+            
+            .list_item
+                font-weight: normal
+                color: #555555
+                margin: 0px
+                padding: 0px
+                width: 100%
+                display: inline-block
+                border: 1px dotted #EEEEEE !important
+                background: none
+
+                &:hover
+                    background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x
+                .icon
+                    background: url($JQUERY_SPRITE) no-repeat scroll 2px -224px rgba(0, 0, 0, 0)
+                    height: 20px
+                    width: 10px
+                    padding-left: 1.5em
+
+                div:first-child
+                    cursor: move
+                
+
+            .delete_icon
+                display: inline-block !important
+                height: 17px
+                width: 20px
+                cursor: pointer
+                background:
+                    image: url("img/icon_delete.png")
+                    repeat: no-repeat
+                    position: 0 5px
+
+            .group_member_delete_click_js
+                color: $GREEN_LINK
+
+
+    .change_ring_order_status_js
+        color: #ff0000
+        font-size: 13px
+        padding: 5px
+        margin-bottom: 2px
+.hide
+    display: none
+.show
+    display: block

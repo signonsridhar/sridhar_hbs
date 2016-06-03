@@ -1,0 +1,26 @@
+<div class="tabs_wrapper <%= viewmodel.attr('type') %> <%= viewmodel.attr('css') %>">
+
+    <%
+        var tabs = viewmodel.attr('tabs');
+        var active_val = active();
+        if (tabs){
+            var raw_tabs = tabs.serialize();
+            var map = raw_tabs.map;
+            var renderer = raw_tabs.renderer;
+            var tab_group = _.uniqueId('tab_group_');
+            for(var key in map) {
+                var tab_id = _.uniqueId('tab_');
+    %>
+                <input  type="radio" class="tab_head" id="<%= tab_id %>" name="<%= tab_group %>" value="<%= key %>">
+                <label for="<%= tab_id %>" class="<%= key %>" data-key="<%= key %>">
+                    <i class="<%= key %>"></i>
+                    <%== renderer(key, map[key]) %>
+                </label>
+
+    <%
+            }
+        }
+    %>
+
+</div>
+

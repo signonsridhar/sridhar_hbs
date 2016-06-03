@@ -1,0 +1,16 @@
+@import "_constants"
+
+
+.unassigned_bundle_selector_container_js
+    font-size: 12px
+
+    .large-block-grid-1
+        li
+            padding: 0.5em 0
+            cursor: pointer
+
+    .selected_js
+        background-color: $LIGHT_BLUE !important
+        $list: 3px
+        @include border_radius($list...)
+        color: black

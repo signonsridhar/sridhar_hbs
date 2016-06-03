@@ -1,0 +1,22 @@
+<form>
+    <div class="number_list_js">
+
+        <div class="ported_phone_numbers_container">
+
+            <ul class="large-block-grid-1">
+                <%
+                viewmodel.attr('phone_list').each(function(ph_elem, idx, list){
+                %>
+                <li class="choice_js" data-index='<%=idx %>' data-number="<%= ph_elem.attr('phonenumber')%>">
+                    <div class="number_list_row_container">
+                        <div class="row">
+                         <span><%= ph_elem.attr('phonenumber')%></span>
+                        </div>
+                    </div>
+
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</form>

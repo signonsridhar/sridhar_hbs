@@ -1,0 +1,48 @@
+<div class="row">
+
+    <div class="large-12 columns content_container">
+
+        <div class="row wizard_header">
+            <div class="large-11 columns">
+                <h3><%= LANG.configure_bundles %></h3>
+                <span class="caption"><%= LANG.configure_bundles_note %></span>
+            </div>
+        </div>
+
+
+        <div class="wizard_title">
+            <div class="row">
+                <div class="large-3 columns"><%= LANG.name %></div>
+                <div class="large-2 columns"><%= LANG.email %></div>
+                <div class="large-1 columns"><%= LANG.extension %></div>
+                <div class="large-3 columns"><%= LANG.phone %></div>
+                <div class="large-3 columns"><%= LANG.phone_number %></div>
+            </div>
+        </div>
+
+
+        <div class="wizard_body">
+            <%  bundles.each(function(bundle_elem, idx, list){ %>
+            <div class="line_item invalid">
+                <div class="row <%= (el)-> renderer(el,idx , bundle_elem) %>">
+                </div>
+            </div>
+            <% }) %>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="large-2 columns large-centered">
+
+        <div class="buttonsContainer cf">
+            <a class="button continue_purchase_button_js">
+                <span><%= LANG.continue %></span>
+            </a>
+        </div>
+
+    </div>
+</div>

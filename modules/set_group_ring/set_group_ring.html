@@ -1,0 +1,27 @@
+<div class="group_ring boxed">
+    <div class="row toggle_container_js">
+        <div class="large-10 columns ">
+            <span class="title"><%= _.template(LANG.ringing_members,{}) %>: </span>
+            <div class="group_type_tab_container_js <%= viewmodel.attr('group_call_type') %>">
+            </div>
+            <span>
+                <a class="arrange_sequence"> <%= _.template(LANG.arrange_sequence,{}) %></a>
+            </span>
+
+        </div>
+        <div class="large-2 columns">
+            <div class="ring_switch_js right"></div>
+        </div>
+    </div>
+    <div class="row">
+
+        <label>
+            <% if(viewmodel.attr('allow_member_forward')) { %>
+                <input type="checkbox" name="allow_member_forward" value="<%= viewmodel.attr('allow_member_forward') %>" checked="checked" />
+            <% } else { %>
+                <input type="checkbox" name="allow_member_forward" value="<%= viewmodel.attr('allow_member_forward') %>" />
+            <% } %>
+            <%= _.template(LANG.allow_member_forward,{}) %> <%= viewmodel.attr('group_name') %>
+        </label>
+    </div>
+</div>

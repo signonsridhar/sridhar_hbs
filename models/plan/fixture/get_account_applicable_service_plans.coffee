@@ -1,0 +1,64 @@
+define(['can_fixture'], (can)->
+    can.fixture('GET /bss/product?action=getaccountapplicableserviceplans', (req, resp)->
+        return `{
+           "response":{
+              "service":"getaccountapplicableserviceplans",
+              "response_code":100,
+              "execution_time":347,
+              "timestamp":"2013-12-04T23:08:39+0000",
+              "response_data":{
+                 "packages":[
+                    {
+                       "product_id":"10933234",
+                       "product_type":"servicebundle",
+                       "name":"T-Mobile Line Bundle Monthly (Dev)",
+                       "description":"TMobile Line Bundle Monthly",
+                       "billing_period":1,
+                       "minimum_quantity":3,
+                       "e911StickerRequired":false,
+                       "quickstartInsertRequired":false,
+                       "charges":[
+                          {
+                             "charge_type":"recurring",
+                             "amount":50.0,
+                             "currency":"usd",
+                             "from_number_units":1.0,
+                             "to_number_units":5.0
+                          },
+                          {
+                             "charge_type":"recurring",
+                             "amount":45.0,
+                             "currency":"usd",
+                             "from_number_units":6.0,
+                             "to_number_units":10.0
+                          },
+                          {
+                             "charge_type":"recurring",
+                             "amount":40.0,
+                             "currency":"usd",
+                             "from_number_units":11.0,
+                             "to_number_units":15.0
+                          },
+                          {
+                             "charge_type":"recurring",
+                             "amount":35.0,
+                             "currency":"usd",
+                             "from_number_units":16.0,
+                             "to_number_units":20.0
+                          },
+                          {
+                             "charge_type":"recurring",
+                             "amount":35.0,
+                             "currency":"usd",
+                             "from_number_units":21.0,
+                             "to_number_units":-1.0
+                          }
+                       ]
+                    }
+                 ]
+              },
+              "version":"1.0"
+           }
+        }`
+    )
+)

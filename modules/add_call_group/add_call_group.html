@@ -1,0 +1,16 @@
+<form>
+    <div class="row">
+        <span>
+            Group Name
+        </span>
+        <span>
+            <input  name="group_name" class="group_name" type="text" maxlength="50" <%= (el)-> VALID.render(LANG.errors, group, 'group_name', el) %>  value="<%= group.attr('group_name') %>">
+        </span>
+    </div>
+    <div  class="row">
+        <span>Extension</span>
+        <span>
+            <input name="extension_number" maxlength="125" type="text" <%= (el)-> VALID.render(LANG.errors, group, 'extension_number', el) %>  value="<%= group.attr('extension_number') %>" />
+        </span>
+    </div>
+</form>

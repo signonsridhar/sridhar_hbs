@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="large-8 columns large-centered">
+        <% if(viewmodel.attr('status_message')){  %>
+            <% if(viewmodel.attr('status_message').status != "active") { %>
+                <div class="row status_info">
+                    <div class="columns large-11">
+                        <span><%= LANG[viewmodel.attr('status_message').status] %></span>
+                    </div>
+                    <div class="columns large-1">
+                        <span class="close right"></span>
+                    </div>
+                </div>
+            <% } %>
+            <% if(viewmodel.attr('status_message').credit_card_status != "active") { %>
+                <div class="row cc_status_info_js">
+                    <div class="columns large-11">
+                        <span><%= LANG[viewmodel.attr('status_message').credit_card_status] %></span>
+                    </div>
+                    <div class="columns large-1">
+                        <span class="close right"></span>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</div>

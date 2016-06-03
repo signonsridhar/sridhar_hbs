@@ -1,0 +1,100 @@
+@import "_constants"
+
+
+
+$CARD_VISA:       "#{$BASE_URL}pages/onboard/step_3/img/card_visa.png"
+$CARD_MASTERCARD: "#{$BASE_URL}pages/onboard/step_3/img/card_mastercard.png"
+$CARD_DISCOVER:   "#{$BASE_URL}pages/onboard/step_3/img/card_discover.png"
+$CARD_AMEX:       "#{$BASE_URL}pages/onboard/step_3/img/card_amex.png"
+
+$CVV_AMEX:        "#{$BASE_URL}pages/onboard/step_3/img/cvv_amex.png"
+$CVV_VISA:        "#{$BASE_URL}pages/onboard/step_3/img/cvv_visa.png"
+$CREDIT_CARD_CVC: "#{$BASE_URL}pages/onboard/step_3/img/credit_card_cvc.png"
+
+
+
+    
+body
+    padding-left: 20px !important
+    padding-top: 20px !important
+    @extend .input_style
+
+    input::-webkit-input-placeholder
+        color: rgba(0, 0, 0, 0.25)
+    input::-moz-placeholder
+        color: rgba(0, 0, 0, 0.25)
+    input:-ms-input-placeholder
+        color: rgba(0, 0, 0, 0.25)
+
+    .validation_message
+        font-size: 11px
+        color: red
+        line-height: 27px
+    hr
+        margin: 0.25em 0 0.675em !important
+    .server_error_js
+        color: red
+    form
+        h3
+            font-size: 18px !important
+            margin: 0 0 3px !important
+            color: $HEADER_FONT_DARK_GREEN !important
+            line-height: 1em
+
+        h4
+            font-size: 18px !important
+            margin: 0 0 3px !important
+            color: $HEADER_FONT_DARK_GREEN !important
+            line-height: 1em
+            padding: 25px 0 15px
+
+        .tbl_ccdetails
+            .expiration_lable
+                padding-top: 5px
+
+            .columns
+                padding-left: 0
+
+            .exp_lbl,
+            .cc_address_country_js
+                padding-top: 7px
+                font-size: 14px
+                display: block
+
+            .cc_type_select_js
+                .card_selectable
+                    opacity: 0.25
+                .card_selected
+                    box-shadow: 0 1px 2px #AAAAAA
+                .visa_js,
+                .master_js,
+                .amex_js,
+                .discover_js
+                    width: 35px
+                    height: 24px
+                .visa_js
+                    background-image: url($CARD_VISA)
+                .master_js
+                    background-image: url($CARD_MASTERCARD)
+                .amex_js
+                    background-image: url($CARD_AMEX)
+                .discover_js
+                    background-image: url($CARD_DISCOVER)
+
+            .ccv_format_js
+                .cvv_visa_js,
+                .cvv_amex_js
+                    position: absolute
+                    width: 54px
+                    height: 34px
+                    background-size: 100%
+                    &:hover
+                        width: 117px
+                        height: 76px
+                    &.ccv_hidden
+                        display: none !important
+                .cvv_visa_js
+                    background-image: url($CVV_VISA)
+                .cvv_amex_js
+                    background-image: url($CVV_AMEX)
+

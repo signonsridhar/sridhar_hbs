@@ -1,0 +1,36 @@
+<div class="header">
+
+	<div class="row">
+		<div class="large-8 columns">
+	    	<div class="title"><%= LANG.members %></div>
+	    	<% if(group.attr('group_members').length) { %>
+                <span><%= LANG.arrange_sequence %></span>
+            <% } %>
+		</div>
+		<div class="large-4 columns">
+			<a class="small button_green add_group_members_btn right" href="javascript://"><span><%= LANG.add_group_member%></span></a>
+		</div>
+	</div>
+
+</div>
+
+<% if(group.attr('group_members').length) { %>
+
+    <div class="boxed">
+        <ul class="member_list_sequence_js ui-sortable">
+        <%  group.attr('group_members').each(function(member_elem, idx, list){ %>
+            <li class="member_item_js list_item ui-state-default" <%= (el) -> renderer(el, idx, member_elem) %> data-extensionid="<%= member_elem.member_extensionid %>"></li>
+        <% }) %>
+        </ul>
+    </div>
+
+    <div class="change_ring_order_status_js hide">
+    </div>
+
+    <div class="add_group_member_container_js" title="Add Member"></div>
+    <div>
+        <button class="change_ring_order_js button2" disabled><%= LANG.save %></button>
+    </div>
+<% } else { %>
+        <div class="boxed"><%= LANG.members_empty %></div>
+<% } %>

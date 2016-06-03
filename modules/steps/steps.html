@@ -1,0 +1,20 @@
+<div class="large-12 columns large-centered">
+
+    <ol class="steps_js on_step_<%= viewmodel.attr('curr') %>">
+        <% var steps = viewmodel.attr('steps');
+            for(var i = 0; i < steps.length; i ++ ){
+            var added = i + 1
+        %>
+            <li class="step_<%= added %>">
+            	<div class="a_step">
+            		<div class="onboardingStep"><%= added %></div>
+            	</div>
+            	<div class="caption"><%= steps[i] %></div>
+            	<% if ( i > 0 ) { %>
+            		<div class="stepsBar"></div>
+            	<% } %>
+            </li>
+        <% } %>
+    </ol>
+
+</div>

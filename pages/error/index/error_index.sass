@@ -1,0 +1,35 @@
+@import "_constants"
+
+.error_index
+    margin-bottom: 25px
+    margin-top: 50px
+    min-height: 500px
+
+    .container
+        background-color: #EEEEEE
+        border: 1px solid #DDDDDD
+        $list: 6px
+        @include border_radius($list...)
+        padding: 0
+
+        .head
+            color: #333333
+            background-color: #F5F5F5
+            border-bottom: 1px solid #DDDDDD
+            padding: 10px 15px
+            margin-bottom: 20px
+            $list: 6px 6px 0 0
+            @include border_radius($list...)
+
+            .title
+                color: $HEADER_FONT_DARK_GREEN
+                margin-bottom: 10px
+                padding-bottom: 5px
+        .body
+            padding: 20px 35px 40px
+
+            .msg
+                font-size: 14px
+                line-height: 16px
+
+

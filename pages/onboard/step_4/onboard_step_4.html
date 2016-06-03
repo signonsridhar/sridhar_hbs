@@ -1,0 +1,172 @@
+<div class="row">
+    <div class="large-12 columns">
+
+        <div class="row summary_title">
+            <h3 class="large-5 columns large-centered">
+                <%= LANG.order_summary %>
+            </h3>
+        </div>
+        
+        <div class="row">
+            <div class="large-10 large-offset-1 columns hr">
+                <hr />
+            </div>
+        </div>
+        
+        <div class="row summary_info">
+
+            <div class="large-11 large-centered columns">
+                <div class="row">
+
+                    <div class="large-5 columns">
+                        <div class="row">
+                            <div class="large-5 large-offset-1 columns title"><%= LANG.company_info %>:</div>
+                            <div class="large-6 columns info"><%= tenant.attr('name') %></div>
+                            <div class="large-6 columns info"><%= tenant.attr('primary_address_street1') %>, <%= tenant.attr('primary_address_street2') ? tenant.attr('primary_address_street2')  : '' %> <%= tenant.attr('primary_address_city') %>, <%= tenant.attr('primary_address_state') %>, <%= tenant.attr('primary_address_zip') %>  </div>
+                        </div>
+                    </div>
+
+                    <div class="large-7 columns">
+                        <div class="row">
+                            <div class="large-4 columns title"><%= LANG.administrator %>:</div>
+                            <div class="large-8 columns info"><%= admin.full_name() %></div>
+                            <div class="large-8 columns info"><%= admin.attr('phone') %></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="large-5 columns">
+                        
+                        <div class="row">
+                            <div class="large-5 large-offset-1 columns title"><%= LANG.plan %>:</div>
+                            <div class="large-6 columns info">@Work</div>
+                        </div>
+
+                    </div>
+                    <div class="large-7 columns">
+                        <div class="row">
+                            <div class="large-4 columns title"><%= LANG.phone_number %>:</div>
+                            <div class="large-8 columns info"><%= tenant.attr('main_number.phonenumber') %></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="row">
+            <div class="large-10 large-offset-1 columns hr">
+                <hr />
+            </div>
+        </div>
+
+        <div class="row summary_detail">
+
+            <div class="large-10 large-centered columns">
+            
+                <div class="row">
+                    <div class="large-12 columns plan_name">
+                        <% var summary = viewmodel.attr('summary');
+                        if (summary.attr('did_quantity')){ %>
+                            <%= summary.did_quantity %> Lines for
+                            <%= _.inflect_full(summary.billing_period, 'Month') %>
+                        <% } %>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="large-12 columns plan_title">
+                        <%= 'T-Mobile @Work' %>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="large-6 columns plan_detail">
+                        <ul>
+                            <%
+                            var summary = viewmodel.attr('summary');
+                            if (summary.attr('did_quantity')) { %>
+                            <li class="head">Main Number</li>
+                            <li class="body"><%= _.inflect_full(summary.extension_quantity, 'Extension') %></li>
+                            <li class="body"><%= _.inflect_full(summary.did_quantity, 'Phone Number')%></li>
+                            <li class="body"><%= _.inflect_full(summary.device_quantity, 'Phone')%></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="large-6 columns">
+
+                        <h3>
+                            <%
+                            var summary = viewmodel.attr('summary');
+                            %>
+                            $<%= summary.attr('total_amount_before_taxes') %>
+                        </h3>
+
+                    </div>
+                </div>
+            
+
+
+            </div>
+        </div>
+        <div class="plan_detail_container">
+            <div class="row">
+                <div class="large-12 columns plan_detail">
+
+                    
+
+                    <div class="plan_detail_body_container">
+                        <div class="row">
+                            <div class="large-11 columns large-centered">
+                                <div class="plan_detail_body">
+                                    <div class="row">
+                                        <div class="push-8 large-2 columns">
+                                            <div class="lable"><%= LANG.sub_total %></div>
+                                        </div>
+                                        <div class="large-2 columns">
+                                            <div class="price sub_total">$<%= summary.attr('total_amount_before_taxes') %></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="push-8 large-2 columns">
+                                            <div class="lable"><%= LANG.tax %></div>
+                                        </div>
+                                        <div class="large-2 columns">
+                                            <div class="price tax">$<%= summary.attr('tax_amount') %></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plan_detail_total_container">
+                        <div class="row">
+                            <div class="large-11 columns large-centered">
+
+                                <div class="plan_detail_total">
+                                    <div class="row">
+                                        <div class="push-8 large-2 columns">
+                                            <div class="lable"><%= LANG.total %></div>
+                                        </div>
+                                        <div class="large-2 columns">
+                                            <div class="price total">$<%= summary.attr('total_amount_after_taxes') %></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row summary_agreement">
+            <div class="large-5 columns large-centered agreement_container"></div>
+        </div>
+
+    </div>
+</div>

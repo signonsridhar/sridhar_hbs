@@ -1,0 +1,34 @@
+<div class="bundle_selector_js">
+    <div class="bundle_list_js">
+
+        <div class="bundle_top_container">
+
+            <ul class="large-block-grid-1">
+
+                <%
+                var list = viewmodel.attr('bundle_list');
+                list.forEach(function(bndl_elem, idx, list){
+                %>
+
+                <li class="choice_js" data-index='<%=idx %>' data-number="<%= bndl_elem.attr('bundle_id')%>">
+                    <div class="bundle_list_row_container">
+                        <div class="row">
+                            <div class="large-2 columns"><span class="ext"><%= bndl_elem.attr('extensions.0.extension_number')%></span></div>
+                            <div class="large-7 columns"><span class="phone_name"><%= bndl_elem.attr('extensions.0.devices.0.device_name')%></span></div>
+                            <div class="large-3 columns"><span class="phone_number"><%= bndl_elem.attr('extensions.0.phone_numbers.0.phonenumber')%></span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <% }) %>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<br/>
+
+
+

@@ -1,0 +1,81 @@
+@import "_constants"
+
+
+$BUTTON_IMG: "#{$BASE_URL}pages/settings/index/img/buttons.png"
+
+
+.settings_index
+
+    background-color: #FFFFFF !important
+    $list: 6px 6px 0 0
+    @include border_radius($list...)
+    padding-bottom: 25px
+
+    .columns:first-child
+        padding: 0
+
+
+.settings_edit_item_container
+    font-size: 13px
+    padding: 15px
+    background-color: #D7E6EB
+    margin-right: 15px
+    min-height: 490px
+
+    ul, li:last-child
+        margin-bottom: 0
+
+.settings_edit_item_list
+    list-style-type: none
+    margin-bottom: 10px
+
+    .settings_edit_item
+        background-color: #FFFFFF
+        border-radius: 2px
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
+        padding: 15px
+
+        button, .button
+            margin-bottom: 0 !important
+
+        fieldset
+            border: none !important
+            margin: 0 !important
+            padding: 0 !important
+            
+            legend
+                border-bottom: 1px solid #DDDDDD
+                width: 100%
+                color: $BODY_FONT_COLOR
+                margin-bottom: 15px
+                padding-bottom: 5px
+
+.right_nav_container_js
+    padding-right: 25px
+
+form
+    .company_info_form
+        margin: 15px 0 0 !important
+
+
+.button1
+    border: 0
+    $list: 5px 5px 3px
+    @include border_radius($list...)
+    display: block
+    color: white
+    text-align: center
+    padding-top: 0
+    font-size: 12px
+    height: 25px
+    width: 55px
+    background:
+        image: url($BUTTON_IMG)
+        repeat: no-repeat
+        attachment: scroll
+        color: rgba(0, 0, 0, 0)
+        position: 0 -32px
+    &:hover
+        background-position: 0 0
+
+

@@ -1,0 +1,42 @@
+@import "_constants"
+
+.add_group_member_container_js
+  padding: 0 !important
+  overflow: hidden !important
+
+  .member_selector_form_container_js
+    @extend .input_style
+
+.member_list_js
+  .selected_js
+    .phone_list_row_container
+      background-color: $LIGHT_BLUE !important
+      $list: 3px
+      @include border_radius($list...)
+      color: black
+
+  li
+    padding: 0px !important
+    .phone_list_row_container
+      &:hover
+        background-color: #FAFAFA
+
+.member_selector_js
+  padding: 10px 5px
+
+  .member_top_container
+    height: 175px
+
+    .non_group_members_row_container
+      border-bottom: 1px solid #EEEEEE
+      span
+        font-size: 14px
+
+  .member_list_row_container
+    padding: 5px 10px
+    border-bottom: 1px solid #DDDDDD
+    font-size: 14px
+    color: #777888
+    &:hover
+      color: black
+      font-size: 15px

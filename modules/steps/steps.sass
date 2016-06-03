@@ -1,0 +1,67 @@
+@import "_constants"
+
+
+.steps_container_js
+
+    padding: 20px 0 15px 70px
+    text-align: left
+    $list: 10px 10px 0 0
+
+    .on_step_1
+        @include steps_switch(1)
+    .on_step_2
+        @include steps_switch(2)
+    .on_step_3
+        @include steps_switch(3)
+    .on_step_4
+        @include steps_switch(4)
+    .on_step_5
+        @include steps_switch(5)
+    
+    li
+        color: #666666
+        display: block
+        float: left
+        font:
+            size: 12px
+        list-style: none outside none
+        position: relative
+        text-align: center
+        width: 194px
+        .a_step
+            padding: 7px 0 2px
+            $list: 50%
+            @include border_radius($list...)
+            background-color: #EEEEEE
+            @include box_shadow("0px 2px 1px 1px #999999 inset")
+            position: relative
+            z-index: 100
+            left: 70px
+            width: 50px
+            .caption
+                padding: 5px
+            
+        .stepsBar
+            background: none repeat scroll 0 0 #FFFFFF
+            @include box_shadow("0 1px 2px #333333 inset")
+            display: block
+            height: 8px
+            left: -100px
+            position: absolute
+            top: 22px
+            width: 194px
+            z-index: 50
+
+
+        .onboardingStep
+            display: inline-block
+            height: 35px
+            margin-bottom: 5px
+            width: 35px
+            @include box_shadow("0px 2px 4px 1px #999999")
+            $list: 50%
+            @include border_radius($list...)
+            font-size: 21px
+            font-weight: bold
+            position: relative
+            z-index: 100

@@ -1,0 +1,12 @@
+<div class="row config_edit_item_list">
+
+
+    <ol>
+        <%  items.each(function(item, idx, items){ %>
+            <li data-idx="<%= idx %>" class="config_edit_item config_edit_item_js <%= (el)-> renderer(el,idx , item) %>" >
+
+            </li>
+        <% }) %>
+    </ol>
+</div>
+

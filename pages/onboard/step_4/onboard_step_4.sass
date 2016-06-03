@@ -1,0 +1,116 @@
+@import "_constants"
+
+
+
+.onboard_step_4
+    
+    .hr
+        padding-bottom: 5px
+
+
+    .summary_title
+        text-align: center
+
+    .summary_info
+        font-size: 13px
+        padding-bottom: 10px
+
+        .title
+            color: black
+            font-weight: bold
+            padding: 2px 5px
+            text-align: right
+        .info
+            line-height: 16px
+            padding-bottom: 10px
+
+        .columns.info
+            padding-left: 5px
+
+    hr
+        margin: 0.25em 0 0.675em !important
+    
+    .summary_detail
+        padding-bottom: 0
+
+        h3
+            font-weight: normal
+            text-align: right
+
+        .plan_name
+            font-size: 18px
+            padding-bottom: 7px
+            font-weight: bold
+            color: #000
+        .plan_title
+            padding: 0 0 20px 20px
+        .plan_detail
+            padding-left: 60px
+            ul
+                list-style: none outside none
+                line-height: 20px
+                font-size: 13px
+                li.body
+                    background: url("img/bullet.gif") no-repeat scroll left 11px rgba(0, 0, 0, 0)
+                    padding-left: 13px
+
+        .plan_price
+            text-align: right
+
+        .plan_price_lable
+            text-align: right
+            border-right: 1px solid #DDDDDD
+            h4
+                font-size: 1.2em !important
+
+        .plan_price_container
+            background-image: radial-gradient(ellipse farthest-side at center top , #EEEEEE 0%, #FFFFFF 100%)
+            padding-top: 20px
+            border-top: 1px solid #EEEEEE
+
+    .plan_detail_container
+        padding: 5px 10px 5px 10px
+
+        .plan_detail
+            $list: 5px
+            @include border_radius($list...)
+            padding: 10px
+            background: none repeat scroll 0 0 #F8F8FF
+
+        .plan_detail_head
+            padding: 5px 35px
+            border-bottom: 1px solid #CCCCCC
+
+        .plan_detail_body
+            padding: 5px 35px
+            border-bottom: 1px solid #CCCCCC
+
+            .lable,
+            .price
+                float: right
+                padding-bottom: 5px
+
+        .plan_detail_total
+            padding: 5px 35px
+
+            .lable,
+            .price
+                float: right
+                font-weight: bold
+                color: #333333
+
+
+    .summary_agreement
+        padding-top: 10px
+        font-size: 13px
+
+        a
+            color: $GREEN_LINK
+
+    .spinner_container
+        text-align: center
+
+        .spinner
+            padding-top: 150px
+        
+

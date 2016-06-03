@@ -1,0 +1,34 @@
+<form>
+    <div class="boxed group_vm_container">
+
+        <div class="disable_vm_confirm_box" style="display:none">
+        </div>
+        <div class="row toggle_container_js">
+            <div class="large-10 columns">
+                <span class="title"><%= _.template(LANG.enable_vm,{}) %> <%= viewmodel.attr('group_name') %> - </span> <span><%= _.template(LANG.vm_tip,{}) %></span>
+            </div>
+            <div class="large-2 columns">
+                <div class="vm_switch_js right"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-5 columns">
+                <%= _.template(LANG.send_vm_copy,{}) %>
+            </div>
+            <%if(voicemail_copy.attr('email')){ %>
+                <div class="large-3 columns">
+                    <input type="email" name="email" value="<%= voicemail_copy.attr('email')%>" <%= (el)-> VALID.render(LANG.errors, voicemail_copy, 'email', el) %> />
+                </div>
+                <div class="large-3 columns">
+                    <input type="submit" class="button2 right" value="Save">
+                </div>
+            <%} else { %>
+                <div class="large-3 columns">
+                    <input type="text" name="vm_email" value="<%= viewmodel.attr('voicemail_forward_email')%>" disabled/>
+                </div>
+                <div class="large-3 columns">
+                </div>
+            <% } %>
+        </div>
+    </div>
+</form>

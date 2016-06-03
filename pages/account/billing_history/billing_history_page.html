@@ -1,0 +1,44 @@
+<div class="billing_history_content">
+
+
+    <div class="boxed">
+
+        <div class="row">
+
+            <div class="large-12 columns">
+
+                <div class="row">
+                    <div class="large-11 columns">
+                        <h4><%= LANG.statement_history%></h4>
+                    </div>
+                </div>
+
+                <div class="header">
+                    <div class="row">
+                        <div class="large-5 columns"><%= LANG.statement_date %></div>
+                        <div class="large-5 columns"><%= LANG.statement_number %></div>
+                        <div class="large-2 columns"><%= LANG.amount %></div>
+                    </div>
+                </div>
+                <%
+                    statements = viewmodel.attr('statements')
+                    if(statements) {
+                        statements.each(function(statement_item, idx,list) { %>
+                            <div data-idx="<%= idx %>" class="list_item" >
+                                <div class="row">
+                                    <div class="large-5 columns  <%= (el)-> renderer(el,idx,statement_item) %>">
+                                    </div>
+                                    <div class="large-5 columns statement_number"> #<%= statement_item.statement_number %></div>
+                                    <div class="large-2 columns total_amount">$<%=statement_item.total_amount %> </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

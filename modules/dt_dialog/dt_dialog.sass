@@ -1,0 +1,91 @@
+@import "_constants"
+
+
+
+.dt_dialog
+    border:
+        style: solid
+        color: #333
+        width: 15px 15px 15px 15px
+    z-index: 9999
+    left: 473px !important
+    padding: 0 !important
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0)
+    
+    .ui-dialog-titlebar
+        background: #333
+        $list: 0, 0, 0, 0, "!important"
+        @include border_radius($list...)
+        border: 0 !important
+        padding-bottom: 0 0 10px 10px !important
+        family-font: $FONT_FAMILY
+
+        .ui-dialog-title
+            color: white
+            text-transform: upppercase
+            letter-spacing: 0.05em
+            font-weight: normal
+        button
+            display: none
+
+    .ui-dialog-content
+        background: white
+        font-size: 14px
+
+    &.no_title_js
+        .ui-dialog-titlebar
+            display: none
+    li
+        &.active
+            border: solid 1px red
+    
+    .ui-dialog-buttonpane
+        margin-top: 0 !important
+        border: none !important
+        background-color: gray
+        .ui-dialog-buttonset
+            float: none !important
+            text-align: center
+            button
+                background: none
+                background-color: #E20074
+                border-color: #AF005A
+                border-style: solid
+                border-width: 1px
+                color: #FFFFFF
+                cursor: pointer
+                display: inline-block
+                font-family: inherit
+                font-size: 0.85em
+                padding: 0.3em 1em 0.3em 1em
+                line-height: normal
+                position: relative
+                text-align: center
+                text-decoration: none
+                &:hover
+                    background-color: #AF005A
+
+
+
+.dt_navbar_main
+    height: $DT_NAVBAR_MAIN_HEIGHT
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1)
+    margin: 0 !important
+    overflow: hidden
+    .dt_navbar_inner
+        background:
+            color: #FAFAFA
+            image: linear-gradient(to bottom, #FFFFFF, #F8F8F8)
+            repeat: repeat-x
+        border:
+            color: #E6E6E6
+            left: medium none
+            radius: 0 0 0 0
+            right: 0 none
+            style: solid none
+            width: 1px 0 1px medium
+        bottom: 0
+        padding: 0
+        z-index: 9999
+        width: 100%
+        left: 0px

@@ -1,0 +1,55 @@
+<div class="row hovering_plan">
+	
+    <div class="large-12 columns">
+    
+    	<div class="row">
+    		<div class="large-12 columns">
+        		<h6 class="header"> <%= LANG.header %> </h6>
+        	</div>
+    	</div>
+
+    	<div class="row body_container">
+	        
+	        <div class="row">
+		        <div class="large-12 columns">
+		        	<h4><%= plan.attr('name') %><%= LANG.work_plan %></h4>
+		        </div>
+	        </div>
+		        
+	        <div class="row body">
+	            <div class="large-5 large-offset-1 columns">
+	                <h5 class="title"><%= plan.attr('num_of_lines') %></h5>
+	                <div class="info"><%= LANG.lines %></div>
+	            </div>
+	
+	            <div class="large-5 large-uncentered columns">
+	                <h5 class="title"><%= plan.attr('prepaid_months') %></h5>
+
+	                <div class="info"><%= LANG.prepaid_months %></div>
+	            </div>
+
+	        </div>
+	        <div class="row bs">
+                <div class="large-10 large-centered columns">
+
+                	<div class="sub_total">
+	                    <% if (viewmodel.attr('show_total')) { %>
+
+	                    <%= LANG.order_total %> $<%= plan.attr('total') %>
+	                    <% } %>
+                	</div>
+
+                </div>
+	        </div>
+            <div class="row body">
+                <div class="large-10 large-centered columns">
+                    <div class="info tax_disclaimer">
+                        <%= LANG.tax_disclaimer %>
+                    </div>
+                </div>
+            </div>
+		        
+    	</div>
+
+    </div>
+</div>

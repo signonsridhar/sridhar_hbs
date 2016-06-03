@@ -1,0 +1,5 @@
+<option value="" selected="selected">Year</option>
+<% 	var currYear = (new Date()).getFullYear(); %>
+<% for(var i=0; i<10; i++) {%>
+<option value='<%= currYear %>'><%= currYear %></option>
+<% currYear++;} %>

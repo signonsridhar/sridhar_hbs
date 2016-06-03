@@ -1,0 +1,85 @@
+define([ 'can_fixture'], (can)->
+    can.fixture('POST /bss/tenant?action=addbundles', (req, res)->
+        return `{
+            "response":{
+                "service":"addbundles",
+                "response_code":100,
+                "execution_time":20516,
+                "timestamp":"2013-12-18T21:03:27+0000",
+                "response_data":{
+                    "purchase_summary":{
+                        "line_name":"T-Mobile Line Bundle Prepaid Semi-Annually (Dev)",
+                        "total_line_quantity":1.0,
+                        "line_quantity":1.0,
+                        "extension_quantity":1.0,
+                        "did_quantity":1.0,
+                        "device_quantity":1.0,
+                        "master_paln_extensioin_quantity":0.0,
+                        "master_plan_did_quantity":0.0,
+                        "master_plan_device_quantity":0.0,
+                        "billing_period":6,
+                        "amount_per_unit":240.0,
+                        "tax_amount":0.0,
+                        "total_amount_before_taxes":238.68,
+                        "total_amount_after_taxes":238.68
+                    },
+                    "bundles":[
+                    {
+                        "bundle_id":10000118,
+                        "tenant_id":10000042,
+                        "status":"OSSPROVISIONED",
+                        "is_assigned":false,
+                        "extensions":[
+                        {
+                            "extensionid":10000282,
+                            "tenantid":10000042,
+                            "extension_number":203,
+                            "vm_forwarding_email":"eswari@choochee.com",
+                            "dnd_enabled":false,
+                            "call_waiting_enabled":false,
+                            "forwarding_enabled":false,
+                            "vm_forwarding_enabled":false,
+                            "international_calls_enabled":false,
+                            "devices":[
+                            {
+                                "deviceid":10000118,
+                                "is_assigned":false,
+                                "extension":203,
+                                "productid":"10261667",
+                                "product_sku":"SKU-CSO-IP303-001",
+                                "status":"unselected",
+                                "device_name":"Cisco IP303 Default Device",
+                                "creation_date":"2013-12-18T21:03:23+0000"
+                            }
+                            ],
+                            "phone_numbers":[
+                            {
+                                "didid":40000054,
+                                "partner_code":"tmus",
+                                "phonenumber":16508000054,
+                                "caller_id":0,
+                                "area_code":"650",
+                                "country_code":"1",
+                                "city":"Mountain View",
+                                "state":"CA",
+                                "is_conference":false,
+                                "is_toll_free":false,
+                                "is_ported":false,
+                                "is_assigned":true,
+                                "extension":0,
+                                "type":"user_line"
+                            }
+                            ],
+                            "group_members":[
+
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                },
+                "version":"1.0"
+            }
+        }`
+    )
+)

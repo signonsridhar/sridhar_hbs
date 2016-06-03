@@ -1,0 +1,67 @@
+@import "_constants"
+
+
+$CIRCLE_ARROWS: "#{$BASE_URL}pages/onboard/step_2/img/circle_arrows.png"
+
+
+    
+.onboard_step_2
+    hr
+        margin: 0.25em 0 0.675em !important
+
+    .company_main_selector_js
+        margin-bottom: 50px
+        padding: 10px 30px 0
+        h5
+            font-size: 18px !important
+            margin: 0 0 3px !important
+            color: $HEADER_FONT_DARK_GREEN !important
+            line-height: 1em
+        h3
+            font-size: 3.5em
+            font-weight: normal
+            line-height: 0.75em
+        .main_click_js,
+        .main_toll_click_js
+            color: $GREEN_LINK !important
+        span
+            font-size: 15px
+
+    .transfer_number_container
+        background-image: radial-gradient(ellipse farthest-side at center top, #EEEEEE 0%, #FFFFFF 100%)
+        padding: 40px 20px 0
+        border-top: 1px solid #EEEEEE
+        height: 100px
+        width: 470px
+
+        .request_instruction
+            margin-left: 40px
+            margin-top: -22px
+            padding-top: 5px
+            font-size: 14px
+            line-height: 16px
+
+        .cancel_transfer
+            margin-left: 40px
+            a
+                color: $GREEN_LINK
+                margin-top: 5px
+
+
+        .transfer_number_link
+            color: $GREEN_LINK !important
+
+        .transfer_number
+            margin: 20px 0
+            font-size: 13px
+
+        .circle_arrows
+            background:
+                image: url($CIRCLE_ARROWS)
+                repeat: no-repeat
+                position: 0 0
+            display: inline-block
+            height: 30px
+            width: 30px
+            margin: 0 0 -10px 5px
+        

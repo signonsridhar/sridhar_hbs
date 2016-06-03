@@ -1,0 +1,49 @@
+<div class="payment_method_content">
+
+
+    <div class="change_cc_container">
+        <div class="row">
+            <div class="large-12 columns">
+                <a class="change_cc_card small button right" href="javascript://">Change Credit Card</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="boxed">
+
+        
+        <div class="payment_method_inuse">
+            <div class="row">
+                <div class="large-12 columns">
+                    <%= viewmodel.attr('credit_card.card_type') %> <%= viewmodel.attr('credit_card.number') %> will be used for all charges.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="large-7 columns">
+                <div class="row">
+                    <div class="large-6 columns">Expiration</div>
+                    <div class="large-6 columns"><%= viewmodel.attr('credit_card.expiration_month') %>/<%= viewmodel.attr('credit_card.expiration_year') %></div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">Cardholder's Name</div>
+                    <div class="large-6 columns"><%= viewmodel.attr('credit_card.first_name') %>  <%= viewmodel.attr('credit_card.last_name') %></div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">Address</div>
+                    <div class="large-6 columns">
+                        <%= viewmodel.attr('credit_card.address1') %>
+                        <%= viewmodel.attr('credit_card.city') %>, <%= viewmodel.attr('credit_card.state') %>
+                        <%= viewmodel.attr('credit_card.country') %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>

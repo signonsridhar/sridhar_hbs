@@ -1,0 +1,101 @@
+
+
+
+<div class="navbar navbar_fixed_top navbar_main fixed_to_top">
+     <div class="navbar_inner">
+     	
+     	<div class="row">
+             
+             <div class="large-3 columns">
+		         <h1><a href="/#!/config"><img src="modules/header/default/img/tmobile_at_work.png"></a></h1>
+             </div>
+             
+             
+             <div class="large-9 columns">
+             
+		        <div class="row">
+		        	<div class="global_navigation">
+		            	<ul class="inline-list right">
+
+                            <li><a href="http://t-mobileatwork.com/support/" target="_blank"><%= LANG.top.help %></a></li>
+                            <% if (auth.attr('logged_in')){ %>
+                                <li><a class="logout" href="javascript:// %>"><%= LANG.top.logout %></a></li>
+                            <% } else { %>
+                                <li><a href="<%= can.route.url({main: 'auth', sub:'login'}) %>"><%= LANG.top.login %></a></li>
+                            <% } %>
+
+		                </ul>
+		            </div><!-- close global_navigation -->
+
+                    <div class="right hi">
+                        <% if (auth.attr('auth_user')){  %>
+                            Hi <span class="name"><%= auth.attr('auth_user').user.first_name %></span>
+                        <% } %>
+                    </div>
+
+		        </div>
+		        
+		        
+		        
+		        <div class="row">
+		            <div class="main_navigation main_navigation_js right">
+                        <%
+                        if (auth.attr('auth_user')){  %>
+                            
+                            <div class="title"><%= auth.auth_user.attr('tenant_name') %></div>
+                            
+                            <div class="main">
+                                
+                                Main: <%= auth.attr('auth_user').main_number %> Ext: <%= auth.attr('auth_user').get_first_extension_number() %>
+                                <% if (auth.attr('auth_user') && auth.attr('conference_numbers') && auth.attr('conference_numbers').length > 0 ){  %>
+                                
+                                <div class="conference">
+                                    
+                                    <span>Conference: <%= auth.attr('conference_numbers')[0].phonenumber %></span>
+                                    <span class="more_numbers">
+                                        <a href="javascript://" class="more_numbers_js">more numbers</a><i class="mo_num more_numbers_js"></i>
+                                    </span>
+
+                                </div>
+
+                                <%
+                                setTimeout(function() {
+                                    $( ".more_numbers_js" ).trigger( "click" );
+                                }, 1000);
+                                }
+                                %>
+                                
+                                <div>
+                                    Bridge Id: <%= auth.attr('auth_user').user.conferenceBridge %> PIN: <%= auth.attr('auth_user').user.conference_bridge_pin %>
+                                </div>
+
+                            </div>
+
+                        <% } else { %>
+
+                            <div class="main specialist_tollfree">
+                                <div class="row">
+                                    <div class="columns large-8 large-centered name">
+                                        Call a US-based specialist
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="columns large-6 large-centered number">
+                                        1 (800) 286-0203
+                                    </div>
+                                </div>
+                            </div>
+
+                        <% } %>
+
+					</div>
+		        </div>
+		        	
+            </div>
+	        
+             
+        </div>    
+
+         
+     </div>
+ </div>

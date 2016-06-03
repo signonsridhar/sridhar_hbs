@@ -1,0 +1,16 @@
+{
+    "name":"crossrunner",
+    "description":"runs karma, and depending on which OS it will determine which browsers to run",
+    "dependencies":{
+        "karma":"*",
+        "karma-ie-launcher":"*",
+        "karma-opera-launcher":"*",
+        "underscore":"*",
+        "underscore.string":"*",
+        "coffee-script":"*",
+        "commander":"*",
+        "colors": "*",
+        "chokidar" :"*",
+        "faye":"*"
+    }
+}

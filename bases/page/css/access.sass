@@ -1,0 +1,60 @@
+.access_user
+    .config_index
+        .button2
+            display: none !important
+
+.access_user
+
+    .tabs_wrapper
+        label[data-key="account"]
+            display: none
+
+        label[data-key="config"]
+            .config_label,
+            .config_desc
+                display: none
+
+
+    .button-group,
+    .delete_container,
+    .delete_user_container,
+    .unassign_js,
+    .delete_icon,
+    .add_to_call_group_js,
+    .port_number_js,
+    .add_line
+        display: none !important
+
+    input
+        background-image: none !important
+
+
+    .first_name_js,
+    .last_name_js,
+    .email_js,
+    .ext_number
+        position: relative
+
+    .first_name_js:after,
+    .last_name_js:after,
+    .email_js:after,
+    .ext_number:after
+        bottom: 0
+        content: ' '
+        left: 0
+        position: absolute
+        right: 0
+        top: 0
+
+
+
+
+
+
+.access_admin
+
+    .tabs_wrapper
+        label[data-key="config"]
+            .company_dir_label,
+            .company_dir_desc
+                display: none

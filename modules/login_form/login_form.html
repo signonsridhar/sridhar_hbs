@@ -1,0 +1,58 @@
+
+<div class="login_form">
+    <div class="row">
+        <div class="small-6 medium-4 large-5 medium-centered large-centered columns container">
+
+            <div class="head">
+                <b class="title">Login to your account</b>
+            </div>
+            
+            <div class="body">
+
+                <form>
+                    <div class="backend_error"></div>
+
+                    <div class="row">
+                        <div class="large-3 columns">
+                            <label class="right inline" >Email</label>
+                        </div>
+                        <div class="large-9 columns">
+                            <input type="email" name="valid_email_format" placeholder="Email"
+                                    <%= (el)-> VALID.render(LANG.errors, user, 'valid_email_format', el) %> />
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-3 columns">
+                            <label class="right inline" >Password</label>
+                        </div>
+                        <div class="large-9 columns">
+                            <input type="password" name="password" placeholder="Password" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-12 columns captcha_cont"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-12 columns large-centered">
+                            <input type="submit" value="Login" class="button" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-5 columns right">
+                            <a class="right" href="<%= can.route.url({main:'auth', sub: 'forgot_password'}) %>">Forgot Password?</a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

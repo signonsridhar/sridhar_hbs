@@ -1,0 +1,25 @@
+<div class="row overlay_js config_edit_item_group">
+	<div class="large-12 columns">
+        <div class="row">
+            <div class="large-3 columns group_name">
+                <%= item.attr('group_name') %>
+            </div>
+            <div class="large-3 columns">
+                Ext <span><%= item.attr('extensions.0.extension_number') %></span>
+            </div>
+            <div class="large-1 columns">
+                <%if (item.attr('extensions.0.phone_numbers.0.phonenumber')){%>
+                    <span><%= item.attr('extensions.0.phone_numbers.0.phonenumber') %></span>
+                <%}%>
+            </div>
+            <div class="large-2 columns">
+                <div class="delete_container right">
+                    <i class="edit_icon edit_js"></i><a class="edit_group_js green_link">Edit</a>
+                    <% if (item.attr('group_name') != "Main") { %>
+                        <i class="delete_icon delete_js"></i><a href="javascript://" class="delete_js green_link">Delete</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>

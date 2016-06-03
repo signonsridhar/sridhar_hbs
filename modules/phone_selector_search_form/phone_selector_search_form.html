@@ -1,0 +1,32 @@
+<div class="phone_selector_js">
+    <div class="phone_list_js">
+
+        <div class="phone_top_container">
+
+            <ul class="large-block-grid-1">
+
+                <%
+                viewmodel.attr('phone_list').forEach(function(ph_elem, idx, list){
+                %>
+
+                <li class="choice_js" data-index='<%=idx %>' data-number="<%= ph_elem.attr('product_id')%>">
+                    <div class="phone_list_row_container">
+                        <div class="row">
+                            <div class="large-8 columns"><span><%= ph_elem.attr('name')%></span></div>
+                            <div class="large-4 columns"><span>$<%= ph_elem.charges[0].attr('amount')%></span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <% }) %>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<br/>
+
+
+

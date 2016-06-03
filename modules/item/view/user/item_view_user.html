@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="large-12 columns">
+        <div class="row">
+            <div class="large-3 columns">
+
+                <span class="first_name_js">
+                    <input type="text" name="first_name" value="<%= item.attr('first_name') %>" />
+                </span>
+                <span class="last_name_js">
+                    <input type="text" name="last_name" value="<%= item.attr('last_name') %>" />
+                </span>
+            </div>
+            <div class="large-4 columns"><%= item.attr('email') %></div>
+            <div class="large-2 columns">
+                <span>Call Group:</span>
+                <% var group_members = item.attr('group_members')
+                for(var i = 0; i < group_members.length; i++) {
+                    var curr = group_members[i]
+                    if (curr.attr('group_name') !== 'Conference'){
+                %>
+                    <span><%= curr.attr('group_name') %></span>
+                <% }} %>
+                <a href="javascript://" class="edit">Edit</a>
+                <a href="javascript://" class="delete">Delete</a>
+            </div>
+        </div>
+        <%  var bundle_list= item.attr('bundles');bundle_list.forEach(function(bundle_elem, idx, bundle_list){ %>
+        <div class="row">
+            <div class="large-2 columns">
+                Ext <span><%= bundle_elem.attr('extensions.0.extension_number')%></span>
+            </div>
+            <div class="large-4 columns">
+                Number <span name="phone_number">
+                <% if (bundle_elem.attr('extensions.0.phone_numbers.0.phonenumber')) {%>
+                    <%= bundle_elem.attr('extensions.0.phone_numbers.0.phonenumber')%>
+                <% }%>
+                </span>
+            </div>
+            <div class="large-2 columns">
+                Phone <span name="phone">
+                <% if (bundle_elem.attr('extensions.0.devices.0.name')) {%>
+                    <%= bundle_elem.attr('extensions.0.devices.0.name')%>
+                <% }%>
+                </span>
+            </div>
+
+        </div>
+        <% }) %>
+        <div class="row"></div>
+    </div>
+
+</div>

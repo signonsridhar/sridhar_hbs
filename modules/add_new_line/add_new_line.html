@@ -1,0 +1,23 @@
+<form>
+    <div class="row">
+        <div class="title">How many new lines would you like to add?</div>
+        <div>
+            <select name="select_line">
+                <option value="">Lines</option>
+                <%
+                var plan_lines = viewmodel.attr('plan_lines');
+                if(plan_lines){
+                    min_lines = plan_lines.min_lines
+                    max_lines = plan_lines.max_lines
+                    for(var line = min_lines; line <= max_lines; line++) {
+                    %>
+                        <option value="<%= line %>"><%= line %></option>
+                    <%
+                    }
+                }
+
+                %>
+            </select>
+        </div>
+    </div>
+</form>

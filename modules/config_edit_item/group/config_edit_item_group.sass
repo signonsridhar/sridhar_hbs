@@ -1,0 +1,44 @@
+@import "_constants"
+
+
+//   This page contains styling for config_edit_item_user, config_edit_item_group, config_edit_item_bundle
+
+$GROUP_BUTTONS: "#{$BASE_URL}pages/config/index/img/config_buttons.png"
+
+
+
+.config_edit_item_group
+
+    padding: 15px
+
+    .columns
+        padding: 0
+
+    .group_name
+        font-weight: bold
+        color: #000000
+
+    .green_link
+        color: $GREEN_LINK !important
+
+
+    .delete_icon, 
+    .edit_icon
+        display: inline-block !important
+        height: 17px
+        width: 15px
+        cursor: pointer
+        background:
+            image: url("img/icon_delete.png")
+            repeat: no-repeat
+            position: 0 5px
+
+
+    .edit_icon
+        background:
+            image: url("img/icon_edit_green.png")
+            repeat: no-repeat
+            position: 0 5px
+
+    .delete_icon
+        margin-left: 15px

@@ -1,0 +1,72 @@
+@import "_constants"
+
+
+.login_form_container_js
+    min-height: 100%
+
+.login_form
+    margin-bottom: 25px
+    margin-top: 50px
+
+    .container
+        background-color: #EEEEEE
+        border: 1px solid #DDDDDD
+        $list: 6px
+        @include border_radius($list...)
+        padding: 0
+
+        .head
+            color: #333333
+            background-color: #F5F5F5
+            border-bottom: 1px solid #DDDDDD
+            padding: 10px 15px
+            margin-bottom: 20px
+            $list: 6px 6px 0 0
+            @include border_radius($list...)
+
+            .title
+                color: $HEADER_FONT_DARK_GREEN
+                margin-bottom: 10px
+                padding-bottom: 5px
+            
+
+        .body
+            padding: 15px
+
+            .backend_error
+                color: rgba(255, 0, 0, 0.6)
+                font-size: 14px
+                text-align: center
+                padding-bottom: 15px
+
+            form
+                label
+                    color: #AAABBB
+                    font-weight: normal
+
+                input[type="submit"]
+                    width: 100%
+                    $list: 6px
+                    @include border_radius($list...)
+
+                a
+                    font-size: 13px
+
+            #recaptcha_area
+                float: none !important
+                margin-left: auto
+                margin-right: auto
+                position: relative
+
+                #recaptcha_table
+                    margin-bottom: 15px !important
+                    td.recaptcha_r4_c1
+                        .recaptcha_input_area
+                            #recaptcha_response_field
+                                border-radius: 3px !important
+                                color: #000000 !important
+                                font-size: 0.855em !important
+                                height: 1.75em !important
+                                margin: 0 0 0.6em !important
+                                padding: 0.3em 0.5em !important
+                                bottom: 0 !important

@@ -1,0 +1,57 @@
+<div class="row overlay_js config_edit_item_bundle">
+    <div class="large-12 columns">
+
+
+        <div class="item_list_head">
+            <div class="row">
+
+                <div class="large-5 columns">
+
+                    <div class="row">
+                        <span class="first_name_js">
+                            <input type="text" name="first_name" <%= (el)-> VALID.render(LANG.errors, user, 'first_name', el) %> placeholder="Enter First Name" value="<%= user.attr('first_name') %>" />
+                        </span>
+                        <span class="last_name_js">
+                            <input type="text" name="last_name" <%= (el)-> VALID.render(LANG.errors, user, 'last_name', el) %> placeholder="Enter Last Name" value="<%= user.attr('last_name')%>" />
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="large-5 columns">
+
+                    <span class="email_js">
+                        <input type="text" name="email" <%= (el)-> VALID.render(LANG.errors, user, 'email', el) %> placeholder="Enter Email Address" value="<%= user.attr('email')%>" />
+                    </span>
+                    <a class="add_user_to_bundle_js button2">Save</a>
+
+                </div>
+
+
+                <div class="large-2 columns">
+                    <div class="delete_user_container right" style="display:none;">
+                        <i class="delete_icon delete_js"></i><a href="javascript://" class="delete_bundle_js green_link">Delete</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="item_list_body">
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <li class="bundle_js bundle">
+
+                    </li>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row"></div>
+
+    </div>
+
+</div>

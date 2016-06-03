@@ -1,0 +1,90 @@
+@import "_constants"
+
+
+.wizard_step_1
+    font-size: 13px
+
+    .wizard_header
+        padding: 0 0 25px
+        
+        h3
+            color: $PRIMARY_COLOR
+            margin: 0 0 5px
+            text-align: left
+            font-weight: normal
+            line-height: 1em
+
+        .caption
+            color: #999999
+    
+        
+    form
+        @extend .input_style
+
+
+    .wizard_title
+        border-bottom: 1px solid #DDDDDD
+        padding-bottom: 5px
+        color: black
+        font-weight: bold
+
+
+
+    .line_item.valid
+        color: black
+        .check
+            display: inline-block !important
+            @extend .sprite
+            height: 25px
+            width: 25px
+            cursor: pointer
+            background:
+                position: -148px -168px
+
+    .line_item.invalid
+        color: $BODY_FONT_COLOR
+        .check
+            display: inline-block !important
+            @extend .sprite
+            height: 25px
+            width: 25px
+            cursor: pointer
+            background:
+                position: -118px -168px
+            opacity: 0.7
+
+    .line_item
+        border-bottom: 1px solid #EEEEEE
+        padding: 10px 0 5px
+
+        input[name="extension"]
+            width: 45px
+        input[name="first_name"]
+            min-width: 100px
+        input[name="email"]
+            min-width: 165px
+
+
+        .phone_options_click_js
+            display: inline-block !important
+            @extend .sprite
+            height: 15px
+            width: 17px
+            cursor: pointer
+            background:
+                position: -175px -55px
+            margin-top: 4px
+        
+        .main_click_js
+            color: $GREEN_LINK
+            margin-left: 7px
+            font-size: 11px
+
+        .phonenumber_js, 
+        .phone_js
+            color: black
+            line-height: 1.6em
+
+        
+
+        

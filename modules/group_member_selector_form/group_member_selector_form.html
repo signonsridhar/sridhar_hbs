@@ -1,0 +1,33 @@
+<div class="member_selector_js">
+    <div class="non_group_members_js">
+
+        <div class="member_top_container">
+
+            <ul class="large-block-grid-2">
+
+                <%
+                viewmodel.attr('non_group_members').each(function(member_elem, idx, list){
+                %>
+
+                <li class="choice_js" data-index='<%=idx %>' data-number="<%= member_elem.attr('member_extension_number')%>">
+                    <div class="non_group_members_row_container">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <span><input name="member_extension" type="checkbox" value="<%= member_elem.attr('member_extensionid')%>" /></span>
+                                <span><%=  member_elem.attr('member_extension_number')%> <%=  member_elem.attr('member_first_name')%></span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <% }) %>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+

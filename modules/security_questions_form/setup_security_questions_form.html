@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="large-12 columns">
+        <div class="row"><h6 class="sub_title">Select <%= viewmodel.attr('count') %> security questions</h6></div>
+
+        <div class="row">
+            <div class="large-12 columns">
+
+                <% viewmodel.attr('questions').each(function(questions, idx){ %>
+                    <div class="row">
+                        <div class="large-3 columns question_numbers">
+                            <label>Question #<%= idx  + 1%>: </label>
+                        </div>
+                        <div class="large-9 columns">
+                            <select name="question_<%= idx %>">
+                                <option value="">-- Select Question -- </option>
+                                    <% questions.each(function(question, id){ %>
+
+                                        <option <%= viewmodel.attr('selected.' + idx) == id?'selected="selected"':'' %>
+                                                    value="<%= id %>"><%= question %></option>
+                                    <% }); %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns large-12 answer_field">
+                            <input class="answer" type="text" name="answer_<%=idx %>" value="<%= viewmodel.attr('answer_' + idx) %>" />
+                        </div>
+                    </div>
+                <% }) %>
+
+            </div>
+        </div>
+    </div>
+</div>

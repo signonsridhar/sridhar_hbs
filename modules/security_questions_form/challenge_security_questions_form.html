@@ -1,0 +1,38 @@
+<div class="row">
+   <div class="small-7 medium-7 large-7 medium-centered large-centered columns container">
+
+      <div class="head">
+          <b class="title">Security question</b>
+      </div>
+      <div class="body">
+           <%
+            var idx = 1;
+            viewmodel.attr('questions').each(function(question, id){
+
+           %>
+           <div class="row">
+               <div class="large-2 columns">
+                  <label class="right question_numbers">
+                    Question <%= idx %>:
+                  </label>
+               </div>
+
+               <div class="large-10 columns">
+                    <span class="questions"><%= question %></span>
+                    <input type="text" name="answer_<%= id %>" />
+               </div>
+           </div>
+           <% idx++;
+           }); %>
+           <div class="row">
+              
+              <div class="large-12 columns large-centered validate">
+                <input class="button" type="submit" value="Validate" />   
+              </div>
+               
+           </div>
+
+      </div>
+
+   </div>
+</div>

@@ -1,0 +1,301 @@
+@import "_constants"
+
+
+//   This page contains styling for config_edit_item_user, config_edit_item_group, config_edit_item_bundle
+
+$GROUP_BUTTONS: "#{$BASE_URL}pages/config/index/img/config_buttons.png"
+
+
+
+.config_edit_item
+    list-style-type: none
+    margin-bottom: 10px
+
+
+    .overlay_js
+        position: relative
+
+        .list_item_overlay.item_warning,
+        .list_item_overlay.bundle_item_warning
+            position: absolute
+            bottom: 0
+            top: 0
+            right: 0
+            left: 0
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8)
+            width: 100%
+            $list: 3px
+            @include border_radius($list...)
+            text-align: center
+            z-index: 2
+
+            .warning_container
+                margin-top: 5px
+                .title
+                    color: #EEEEEE
+                    font-size: 16px
+
+        .button1
+            display: inline-block
+            color: white
+            text-align: center
+            font-size: 12px
+            height: 22px
+            padding-top: 1px
+            width: 45px
+            $list: 5px 5px 3px 5px
+            @include border_radius($list...)
+            background:
+                image: url($GROUP_BUTTONS)
+                repeat: no-repeat
+                attachment: scroll
+                color: rgba(0, 0, 0, 0)
+                position: 0 -32px
+            &:hover
+                background-position: 0 0
+
+
+
+//  common styles
+.config_edit_item_group,
+.config_edit_item_user,
+.config_edit_item_bundle
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
+    $list: 2px
+    @include border_radius($list...)
+    padding: 15px
+
+.config_edit_item_group,
+.config_edit_item_user
+    background-color: white
+.config_edit_item_bundle
+    background-color: #F2F2F2
+
+
+
+
+
+
+//   config_edit_item_group
+
+
+
+
+
+
+
+
+
+
+//   config_edit_item_user, config_edit_item_bundle
+
+.config_edit_item_js
+    input[name="first_name"],
+    input[name="bundle_first_name"],
+    input[name="last_name"],
+    input[name="bundle_last_name"],
+    input[name="email"],
+    input[name="bundle_email"],
+    input[name="extension_number"]
+        background-image: url("img/icon_edit.png")
+        background-repeat: no-repeat
+        padding: 0.3em 2em 0.3em 0.5em !important
+        &:focus
+            background-image: none
+
+
+    input[name="first_name"],
+    input[name="bundle_first_name"],
+    input[name="last_name"],
+    input[name="bundle_last_name"],
+    input[name="email"],
+    input[name="bundle_email"],
+        font-size: 13px
+
+
+    input[name="first_name"],
+    input[name="bundle_first_name"],
+    input[name="last_name"],
+    input[name="bundle_last_name"],
+    input[name="email"],
+    input[name="bundle_email"],
+    input[name="extension_number"]
+        height: 2.0125em !important
+        margin: 0 0 0.6em !important
+        padding: 0.3em 2em 0.3em 0.5em
+        padding-right: 15px
+        border:
+            right: 0 none
+            left: 0 none
+        border:
+            top: 0px dotted #DDDDDD
+            bottom: 0px dotted #DDDDDD
+        font-family: helvetica
+        font-weight: normal
+        box-shadow: none
+
+        &:focus
+            border: 1px solid #CCCCCC
+            $list: 3px
+            @include border_radius($list...)
+            box-shadow: 0 0 5px #999999
+            $list: 3px "!important"
+            @include border_radius($list...)
+            color: rgba(0, 0, 0, 0.55) !important
+            height: 2.0125em !important
+            margin: 0 0 0.6em !important
+            padding: 0.3em 2em 0.3em 0.5em !important
+            padding-right: 15px
+
+    .unassign_js,
+    .delete_icon
+        display: inline-block
+        height: 17px
+        width: 15px
+        cursor: pointer
+        background:
+            image: url("img/icon_delete.png")
+            repeat: no-repeat
+            position: 0 5px
+
+    .delete_icon
+        display: inline-block !important
+
+
+
+
+
+
+    .item_list_head
+        border-bottom: 1px solid #DDDDDD
+        color: gray
+
+        .call_group
+            color: black
+
+        .button2
+            height: 20px !important
+            width: 50px !important
+
+        .button1
+            display: inline-block
+            color: white
+            text-align: center
+            font-size: 12px
+            height: 22px
+            padding-top: 2px
+            width: 55px
+            $list: 5px 5px 3px 5px
+            @include border_radius($list...)
+            background:
+                image: url($GROUP_BUTTONS)
+                repeat: no-repeat
+                attachment: scroll
+                color: rgba(0, 0, 0, 0)
+                position: 0 -32px
+            &:hover
+                background-position: 0 0
+
+        .first_name_js,
+        .last_name_js,
+        .email_js
+            padding-right: 10px
+            float: left
+            display: inline-block
+        
+
+        input[name="first_name"],
+        input[name="bundle_first_name"],
+        input[name="last_name"],
+        input[name="bundle_last_name"]
+            width: 140px
+            background-position: 120px 3px
+
+        input[name="email"],
+        input[name="bundle_email"]
+            width: 225px
+            background-position: 205px 3px
+
+
+        
+
+        
+
+        .save_js
+            padding: 0 0 5px
+
+    
+    .green_link
+        color: $GREEN_LINK !important
+        padding-left: 3px
+
+
+
+
+
+
+    .item_list_body
+        padding-top: 5px
+        font-size: 12px
+
+        .button2
+            height: 20px !important
+            width: 30px !important
+
+        .bundle
+            border-bottom: 1px solid #DDDDDD
+            color: gray
+            position: relative
+
+            .ext_number,
+            .phone_number,
+            .phone
+                color: black
+
+            .port_number_js
+                display: inline-block
+                @extend .sprite
+                height: 15px
+                width: 17px
+                cursor: pointer
+                background:
+                    position: -175px -53px
+                margin-top: 4px
+
+
+            input[name="extension_number"]
+                width: 50px
+                background-position: 35px 3px
+                display: inline
+
+        ol
+            margin-left: 0
+
+        .bundle,
+        .add_line
+            list-style-type: none
+        
+
+
+        .assign,
+        .add_to_call_group_js
+            @extend .sprite
+            display: inline-block
+            height: 17px
+            width: 15px
+            cursor: pointer
+            background:
+                image: url("img/icon_add.png")
+                position: 0 5px
+                repeat: no-repeat
+
+
+
+
+
+
+
+//   config_edit_item_bundle
+
+
+

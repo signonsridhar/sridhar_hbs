@@ -1,0 +1,27 @@
+<form>
+    <input type="text" name="email" value="<%= item.attr('email') %>" />
+    <ol>
+        <%  item.attr('bundles').forEach(function(bundle_elem, idx, list){ %>
+            <li data-idx="<%= idx %>" class="bundle">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <span class="ext_number" ><%= bundle_elem.attr('extensions.0.extension_number')%></span>
+                    </div>
+
+                    <div class="large-2 columns">
+                        Number <span class="phone_number"><%= bundle_elem.attr('extensions.0.phone_numbers.0.phonenumber')%></span>
+                    </div>
+
+                    <div class="large-2 columns">
+                        Phone <span class="phone"><%= bundle_elem.attr('extensions.0.devices.0.name')%></span>
+                    </div>
+
+                    <div class="large-1 columns">
+                        <a href="javascript://" class="unassign">Unassign Line</a>
+                    </div>
+                </div>
+            </li>
+        <% }) %>
+    </ol>
+    <input type="submit" value="Save" />
+</form>

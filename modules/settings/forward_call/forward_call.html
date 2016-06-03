@@ -1,0 +1,32 @@
+<form class="row settings_edit_item <%= viewmodel.attr('enabled')?'enabled':'disabled' %>">
+
+    <fieldset>
+        <legend><%= _.template(LANG.title, {ext:viewmodel.attr('extension')}) %></legend>
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-4 columns country_container_js"></div>
+                <div class="large-4 columns phone_number">
+                    <div><input type="text" name="number" <%= (el)-> VALID.render(LANG.errors, forward_num, 'number', el) %> placeholder="Please enter extension"/></div>
+                    <div><%= viewmodel.attr('errors.number_required')?'required':'' %></div>
+                </div>
+                <div class="large-2 columns toggle_container_js"></div>
+
+                <div class="large-2 columns"><input type="submit" class="button2 right" value="Save" <%= forward_num.valid()?'':'disabled="disabled"' %> /></div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <% if(viewmodel.attr('is_call_forward_changed')){ %>
+                        <div class="change_call_forward_success_container">
+                            <%= LANG.call_forward_changed %>
+                        </div>
+                        <% } else { %>
+                        <div class="change_call_forward_error_container">
+                            <%== LANG.errors[viewmodel.attr('errors.display')] %>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+</form>

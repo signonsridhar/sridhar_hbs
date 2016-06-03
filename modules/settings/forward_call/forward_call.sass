@@ -1,0 +1,38 @@
+@import "_constants"
+
+
+$GROUP_BUTTONS: "#{$BASE_URL}pages/account/index/img/account_buttons.png"
+
+
+
+.button1
+    border: 0
+    display: block
+    color: white
+    text-align: center
+    padding-top: 0px
+    font-size: 14px
+    height: 30px
+    width: 65px
+    $list: 6px
+    @include border_radius($list...)
+    background:
+        image: url($GROUP_BUTTONS)
+        repeat: no-repeat
+        attachment: scroll
+        color: rgba(0, 0, 0, 0)
+        position: 0 0
+    &:hover
+        background-position: 0 -32px
+
+.change_call_forward_success_container
+    background-color: #fffac2
+    padding: 5px
+    margin-bottom: 10px
+
+.change_call_forward_error_container
+    color: #f00
+    padding: 5px
+    margin-bottom: 10px
+
+

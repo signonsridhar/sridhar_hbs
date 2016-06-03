@@ -1,0 +1,64 @@
+<div class="plan_selector_big">
+
+    <div class="header row">
+        <h3><%= LANG.title %></h3>
+        <div class="benefit_list">
+        <% for(var i = 0; i < LANG.benefits.length; i++){ %>
+            <div class="text"> <%= LANG.benefits[i] %> </div>
+            <% if (i < LANG.benefits.length - 1) { %>
+            <div class="plus"> + </div>
+            <% } %>
+        <% } %>
+        </div>
+
+    </div>
+
+    <div class="row content">
+        <h1 class="total">$<%= plan.cost() %></h1>
+        <h2 class="per_month_per_user"><%= LANG.per_month_per_user %></h2>
+        <h2 class="intro_price"><small><%= LANG.intro_price %></small></h2>
+        <h5 class="reg_price"><small><%= LANG.reg_price %></small></h5>
+        <h5 class="total_price"><small><%= LANG.order_total %> $<%= plan.attr('total') %></small></h5>
+
+        <div class="slider_container row">
+            <div class="large-3 columns info"><%= LANG.num_of_lines %></div>
+            <div class="large-6 columns slider"></div>
+            <div class="large-3 columns result">
+                <%= plan.attr('num_of_lines') %>
+            </div>
+            <div class="large-1 columns units">UNITS</div>
+            <div class="large-1 columns"></div>
+        </div>
+
+
+        <div class="row prepaid_months">
+            <div class="large-3 columns info"><%= LANG.prepaid_months %></div>
+            <div class="large-3 columns">
+                <select name="billing_period">
+                    <option value="">Months</option>
+                    <% var billing_periods = viewmodel.attr('billing_periods');
+                        for(var i = 0; i < billing_periods.length; i++) {
+                            billing_period = billing_periods[i]
+                    %>
+                        <option value="<%= billing_period %>"><%= billing_period %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="large-6 columns units"></div>
+
+        </div>
+
+
+
+        
+	    <div class="row">
+	    	<div class="get_it_now_container">
+	    		<a href="" class="button small success radius">get it now</a>
+	    	</div>
+	        <!--input type="button" value="GET IT NOW" class="button" /-->
+	    </div>
+
+    </div>        
+    
+    
+</div>

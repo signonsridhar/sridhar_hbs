@@ -1,0 +1,26 @@
+<div class="row company_main_selector_js">
+    <h5>Your Main Number</h5>
+
+    <h3 class="main_number_js">
+        <%= phone.attr('format_phone_number')? phone.attr('format_phone_number'): '(xxx) xxx-xxxx'  %>
+        <span class="phone_num_spinner"><img class="spinner" src="/etc/spinners/loading.gif"></span>
+    </h3>
+
+    <div>
+        <span>
+            Choose a different number
+        </span>
+        <span>
+            <a class="main_click_js">Local Number</a>
+        </span>
+        <span> or </span>
+        <span>
+            <a class="main_toll_click_js">Toll-free Number</a>
+        </span>
+    </div>
+    
+    <div class="local_num_container_js" title="Select a Local Number"/>
+    <div class="toll_num_container_js" title="Select a Toll-free Number" />
+
+
+</div>

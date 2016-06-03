@@ -1,0 +1,20 @@
+<div class="row">
+    <% var enable = viewmodel.attr('enable')
+    for(var i = 0; i < enable.length; i++) {
+    var curr = enable[i]
+    %>
+    <label>
+        <input type="checkbox" name="result" value="<%= curr %>" />
+        <%==LANG[curr] %>
+    </label>
+
+    <% } %>
+</div>
+
+<div class="gigantic pagination row">
+    <a href="/?page=1" class="first_js" data-action="first">«</a>
+    <a href="/?page=4" class="previous_js" data-action="previous">‹</a>
+    <input type="text">
+    <a href="/?page=6" class="next_js" data-action="next">›</a>
+    <a href="/?page=40" class="last_js" data-action="last">»</a>
+</div>

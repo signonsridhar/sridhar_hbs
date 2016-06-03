@@ -1,0 +1,74 @@
+@import "_constants"
+
+
+
+.toll_num_container_js,
+.local_num_container_js
+    padding: 0 !important
+    overflow: hidden !important
+
+    .toll_number_selector_search_form_container_js,
+    .local_number_selector_search_form_container_js
+        @extend .input_style
+        input[name="area_code"]
+            width: 100px
+
+        .number_selector_search_form
+            padding-top: 20px
+            form
+                text-align: center
+
+
+.ported_num_container_js
+    overflow: hidden
+
+
+.number_list_js
+    .selected_js
+        .number_list_row_container
+            background-color: $LIGHT_BLUE !important
+            $list: 0 0 3px 3px
+            @include border_radius($list...)
+            color: black
+
+    li
+        padding: 0px !important
+        .number_list_row_container
+            &:hover
+                background-color: #FAFAFA
+
+.backend_error
+    color: rgba(255, 0, 0, 0.6)
+    font-size: 14px
+    text-align: center
+    padding-bottom: 15px
+
+.phone_num_selector_js
+    padding: 10px 5px
+
+
+    .phone_numbers_top_container
+        height: 175px
+
+    .number_list_row_container
+        padding: 5px 10px
+        border-bottom: 1px solid #DDDDDD
+        font-size: 14px
+        color: #777888
+        &:hover
+            color: black
+
+    .number_list_pagination_container
+        padding: 15px
+        text-align: center
+
+        .small_arrow_left
+            @include small_arrow_left()
+        .small_arrow_right
+            @include small_arrow_right()
+
+        .page_number
+            padding-top: 7px
+            font-size: 14px
+            color: #999999
+            text-transform: uppercase

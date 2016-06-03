@@ -1,0 +1,53 @@
+<div class="company_info_container">
+
+    <div class="company_info_content">
+        
+        
+        <div class="account_info">
+            <div class="row">
+                <div class="title">Account Information</div>
+            </div>
+            <div class="row">
+                <div class="info">
+                    Changes to this information will affect auto-attendant message, shipping address, and company E911 information.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="company_info">
+            <div class="row">
+                <div class="company_name"><%= tenant.attr('name') %> </div> 
+            </div>
+            <div class="row">
+                <div class="company_address">
+                    <%= tenant.attr('primary_address_street1') %> </br>
+                    <%= tenant.attr('primary_address_city') %>, 
+                    <%= tenant.attr('primary_address_state') %> 
+                    <%= tenant.attr('primary_address_zip') %>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="button_container">
+
+        <div class="row">
+            <% if (viewmodel.attr('show_update_button')) { %>
+            <a class="small button2 update_tenant_address right" href="javascript://">Update</a>
+            <% } else { %>
+            <div class="row"><a class="change_tenant_address">Change</a></div>
+            <% }%>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+

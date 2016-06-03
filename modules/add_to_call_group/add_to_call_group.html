@@ -1,0 +1,22 @@
+<div class="call_group_selector_js">
+    <div class="call_group_top_container">
+
+        <ul>
+
+            <%
+            list = viewmodel.attr('all_group_list');
+            list.forEach(function(grp_elem, idx, list){
+
+            %>
+            <li class="choice_js" data-index='<%=idx %>' data-group_id="<%= grp_elem.attr('groupid')%>">
+                <div class="row">
+                    <div class="call_group_list_row_container">
+                        <span><input name="groupid" class="group_id_checkbox" type="checkbox" value="<%= grp_elem.attr('groupid')%>" /></span>
+                        <span class="group_name_js"><%= grp_elem.attr('group_name')%></span>
+                    </div>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>

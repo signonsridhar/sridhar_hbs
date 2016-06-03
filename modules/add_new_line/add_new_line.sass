@@ -1,0 +1,102 @@
+@import "_constants"
+
+
+.add_new_line_container_js,
+.config_index
+
+    padding: 10px 5px
+
+
+    .title
+        margin-bottom: 20px
+        border-bottom: 1px solid #DDDDDD
+        padding-bottom: 5px
+        text-align: center
+
+    select
+        font-size: 0.8em
+        margin: 0 0 0.6em !important
+        padding: 4px
+
+
+    .wizard_header
+        padding: 0 0 20px
+
+        h4
+            color: $PRIMARY_COLOR
+            font-weight: normal
+            margin-bottom: 0
+            text-align: left
+
+        .caption
+            color: #999999
+
+    .wizard_title
+        border-bottom: 1px solid #DDDDDD
+        color: black
+        margin-bottom: 10px
+        padding-bottom: 5px
+        font-weight: bold
+
+    .additional_fee
+        padding: 25px 0 0 10px
+        .bold
+            font-weight: bold
+
+    .configured_lines
+        margin-bottom: 6px
+
+    .plan_detail_container
+        padding: 0 10px
+
+        .plan_detail
+            background-color: #F8F8FF
+            $list: 5px
+            @include border_radius($list...)
+            padding: 10px
+
+        .plan_detail_head
+            border-bottom: 1px solid #CCCCCC
+            padding: 5px 35px
+
+            .lable
+                color: #333333
+                font-size: 14px
+                font-weight: bold
+                padding: 3px
+            .price
+                float: right
+
+        .plan_detail_body
+            border-bottom: 1px solid #CCCCCC
+            padding: 5px 35px
+
+            .lable,
+            .price
+                float: right
+                padding-bottom: 5px
+
+        .plan_detail_total
+            padding: 5px 35px
+
+            .lable,
+            .price
+                color: #333333
+                float: right
+                font-weight: bold
+
+
+    .shipping_info
+        padding: 5px 20px
+
+    .summary_agreement
+        padding-top: 15px
+
+        a
+            color: $GREEN_LINK
+
+    .spinner_container
+        text-align: center
+        padding: 20px
+        
+            

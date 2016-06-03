@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="large-8 columns large-centered">
+        <div class="row">
+            <% if(viewmodel.attr('count_of_ported_numbers')){ %>
+                <div class="ported_numbers_info">
+                    <%= LANG.ported_numbers_available %>
+
+                    <span class="available_number_count">
+                        <%= viewmodel.attr('count_of_ported_numbers') %>
+                    </span>
+
+                    <% if(viewmodel.attr('count_of_ported_numbers') > 1) { %>
+                        <%= LANG.phone_numbers %>
+                    <% } else { %>
+                        <%= LANG.phone_number %>
+                    <% } %>
+                    <%= LANG.existing_lines %>
+                </div>
+
+            <% } %>
+        </div>
+    </div>
+</div>

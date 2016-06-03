@@ -1,0 +1,9 @@
+<div class="row item_list">
+    <ol>
+       <% if (items) { %>
+        <% items.forEach(function(item, index, list){ %>
+            <li <%= (el) -> renderer(el, item, index, list) %>></li>
+        <% }) %>
+       <% } %>
+    </ol>
+</div>

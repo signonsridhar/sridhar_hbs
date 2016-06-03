@@ -1,0 +1,46 @@
+<div class="file_uploader boxed">
+    <div class="row toggle_container_js">
+        <div class="row">
+            <div class="large-10 columns">
+                <%  if (!viewmodel.attr('has_custom_greeting')){ %>
+                    <div class="backend_error">
+                        <% if(viewmodel.attr('group_name')== 'Main'){ %>
+                            <%= _.template(LANG.no_custom_greeting,{}) %> <%= viewmodel.attr('previous_selected_option')%>  <%= _.template(LANG.option_used,{}) %>
+                        <% } %>
+                    </div>
+                <%  } %>
+                <span><%= _.template(LANG.upload_custom_greeting,{}) %> - <%= _.template(LANG.consider_custom_greeting_msg,{}) %></span>
+            </div>
+            <div class="large-2 columns">
+                <div class="custom_greeting_switch_js right"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-6 columns">
+            <form name="upload_greetings_form">
+                <div class="row">
+                <span class="file_wrapper">
+                    <input type="file" name="file_data" id="file_data">
+                    <span class="file_holder"></span> </span>
+                </div>
+                <div class="row">
+                <span class="inline">
+                    <input id="form_submit" name="file_submit_button" type="submit" value="<%= LANG.upload_btn %>" class="button2" />
+                </span>
+                    <span class="inline"><%= _.template(LANG.file_size_limit_msg,{}) %></span>
+                </div>
+            </form>
+        </div>
+        <% if (viewmodel.attr('has_custom_greeting')){ %>
+            <div class="large-6 columns">
+                    <audio controls>
+                        <source src="<%= viewmodel.attr('audio_url') %>" type="audio/mpeg" />
+                        <%= _.template(LANG.unsupported_content,{}) %>
+                    </audio>
+
+            </div>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+
+	<div class="large-12 columns">
+	    
+	    <div class="row wizard_header">
+	        <div class="large-11 columns">
+	        	<h3>Configure your lines</h3>
+	        	<span class="caption">Add users, select extensions, phones and phone numbers to your lines</span>
+	        </div>
+	    </div>
+
+
+	    <div class="wizard_title">
+	    	<div class="row">
+		    	<div class="large-3 columns">Name</div>
+		    	<div class="large-2 columns">Email</div>
+		    	<div class="large-1 columns">Extension</div>
+		    	<div class="large-3 columns">Phone</div>
+		    	<div class="large-2 columns">Phone Number</div>
+	    	</div>
+	    </div>
+
+
+	    <div class="wizard_body">
+	    <%  bundles.each(function(bundle_elem, idx, list){ %>
+	    	<div class="line_item invalid">
+	        	<div class="row <%= (el)-> renderer(el,idx , bundle_elem) %>">
+	        	</div>
+	    	</div>
+	    <% }) %>
+		</div>
+
+
+	</div>
+
+</div>

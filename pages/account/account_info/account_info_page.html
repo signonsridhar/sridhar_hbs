@@ -1,0 +1,84 @@
+<div class="account_info_content">
+
+    <div class="general_info">
+
+        <div class="row">
+            <div class="plan_name"><%= account.attr('master_plan_name') %></div>
+        </div>
+        <div class="row">
+            Main number plus <span class="number_of_lines"><%= account.attr('line_quantity') %></span> lines
+        </div>
+        <div class="row">
+            <%= LANG.account %> <span class="account_id">#<%= account.attr('account_id') %></span>
+        </div>    
+
+    </div>
+    
+    <div class="row">
+        <div class="large-12 columns general_info_links">
+            <div class="list"><a href="<%= can.route.url({main:'account', sub:'rates'}) %>" class="blue_link"><%= LANG.see_rates %></a></div>
+            <div class="list"><a href="javascript://" class="cancel_plan_js blue_link"><%= LANG.cancel_plan %></a></div>
+        </div>
+    </div>
+
+    <div class="boxed">
+
+        <div class="bottom_hr">
+            <div class="row">
+                <div class="large-9 columns">
+                    <%= LANG.expected_charge %>
+                </div>
+                <div class="large-3 columns">
+                    <div class="monthly_payment right">
+                        $<%= account.attr('recurring_charges') %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <%= LANG.next_payment_charged %> <b class="renewal_date"><%= account.attr('renewal_date') %></b>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sub_boxed">
+        <div class="row">
+            <div class="large-10 columns">
+                <%= LANG.your_fees_to_cc %> <b><%= account.attr('credit_card_mask_number')%></b>
+            </div>
+            <div class="large-2 columns">
+                <div class="right">
+                    <a href="#!/account/payment_method" class="blue_link"><%= LANG.change %> <i class="right_arrow_blue"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%
+        if (account.attr('last_payment_amount')) {
+    %>
+        <div class="boxed">
+            <div class="row">
+                <div class="large-8 columns">
+                    <%= LANG.your_last_payment %> <%= account.attr('last_payment_date') %>
+                </div>
+                <div class="large-4 columns">
+                    <div class="last_payment right">
+                        $<%= account.attr('last_payment_amount') %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub_boxed">
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="right">
+                        <a href="#!/account/billing_history" class="blue_link"> <%= LANG.billing_history %> <i class="right_arrow_blue"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>

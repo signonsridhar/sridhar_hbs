@@ -1,0 +1,60 @@
+<form class="row">
+    <fieldset>
+
+        <legend><%= LANG.title %></legend>
+
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-12 columns">
+                    <span class="first_name_js">
+                        <input type="text" name="first_name" placeholder="First name" value="<%= prof_user.attr('first_name') %>"
+                            <%= (el)-> VALID.render(LANG.errors, prof_user, 'first_name', el) %> />
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <span class="last_name_js">
+                        <input type="text" name="last_name" placeholder="Last nmae" value="<%= prof_user.attr('last_name') %>"
+                            <%= (el)-> VALID.render(LANG.errors, prof_user, 'last_name', el) %>   />
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <span class="email_js">
+                        <input type="text" name="email" placeholder="Email" value="<%= prof_user.attr('email') %>"
+                                <%= (el)-> VALID.render(LANG.errors, prof_user, 'email', el) %> />
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <% if(viewmodel.attr('is_profile_changed')){ %>
+                    <div class="change_profile_success_container">
+                        <%= LANG.profile_changed %>
+                    </div>
+                    <% } else { %>
+                    <div class="change_profile_error_container">
+                        <%== LANG.errors[viewmodel.attr('errors.display')] %>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="submit" class="button2 right" value="Save" <%= prof_user.valid()?'':'disabled="disabled"' %>>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+<div class="switch medium radius <%= viewmodel.attr('css') %>">
+
+    <%
+    var data_bind = function(el, param_val){
+        console.log('param_val', el.attr('id'), param_val);
+        return function(){
+            el.data('val', param_val);
+        }
+    }
+    var toggle = viewmodel.attr('toggle');
+    if (toggle){
+        var map = toggle.serialize();
+        var toggle_group = _.uniqueId('toggle_group');
+        for(var label in map) {
+            var toggle_id = _.uniqueId('toggle_');
+            var val = map[label];
+            %>
+            <input type="radio" id="<%= toggle_id %>" name="<%= toggle_group %>" class="toggle_switch"
+                   value="<%= val.toString() %>" />
+            <label for="<%= toggle_id %>"> <%= label %> </label>
+            <%
+        }
+    }
+    %>
+</div>

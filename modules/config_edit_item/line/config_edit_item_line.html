@@ -1,0 +1,56 @@
+<div class="row row_js">
+
+    <div class="large-2 columns">
+        <%
+
+        if (viewmodel.attr('show_unassign_line') == true) { %>
+            <i class="unassign_js"></i>
+        <% } %>
+
+        Ext: <span class="ext_number" >
+            <input class="ext_number_js" type="text" name="extension_number" value="<%= viewmodel.attr('extension_number') %>"/>
+        </span>
+        <a href="javascript://" class="small button2 save_js" style="display:none;">Save</a>
+        <i class="check check_js right" style="display:none;"></i>
+    </div>
+
+    <div class="large-3 columns">
+        Number <span class="phone_number"><%= viewmodel.attr('phone_number')%></span>
+        <% if (viewmodel.attr('number_porting_enabled')) { %>
+            <i class="port_number_js"></i>
+        <% } %>
+
+    </div>
+
+    <div class="large-3 columns">
+        Phone <span class="phone"><%= viewmodel.attr('device_name')%></span>
+    </div>
+    <div class="large-2 columns">
+        <span><i class="add_to_call_group_js"></i></span>
+        <span>Call Group:</span>
+
+        <span class="call_group">
+            <% var group_members = viewmodel.attr('group_members');
+            if(group_members) {
+                for(var i = 0; i < group_members.length; i++) {
+                    var curr = group_members[i];
+                    if (curr.attr('group_name') !== 'Conference'){
+            %>
+        </span>
+                    <span><%= curr.attr('group_name') %></span>
+        <% }}} %>
+    </div>
+
+    <div class="large-2 columns">
+
+        <%if (viewmodel.attr('show_add_line')) { %>
+            <div class="add_line right">
+                <a href="javascript://" class="green_link assign_js"><i class="assign"></i> Add Line</a>
+                <div class="unassign_bundle_container_js" title="Select an unassigned line"/>
+            </div>
+        <% } %>
+
+
+    </div>
+
+</div>

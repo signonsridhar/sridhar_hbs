@@ -1,0 +1,32 @@
+@import "_constants"
+
+
+
+.dnd_form_container_js
+    border: 1px solid #DDDDDD
+    margin-bottom: 15px
+    $list: 3px
+    @include border_radius($list...)
+    font-size: 13px
+    padding: 15px !important
+
+    form
+
+        fieldset
+            border: none !important
+            margin: 0 !important
+            padding: 0 !important
+                
+            legend
+                border-bottom: 1px solid #DDDDDD
+                width: 100%
+                color: $HEADER_FONT_DARK_GREEN
+                margin-bottom: 10px
+                padding-bottom: 5px
+                font-size: 17px
+
+            .columns
+                padding: 0
+
+        .switch
+            margin-bottom: 0

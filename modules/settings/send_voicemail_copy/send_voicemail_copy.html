@@ -1,0 +1,21 @@
+<form class="row settings_edit_item">
+    <fieldset>
+        <legend><%= _.template(LANG.title, {ext: voicemail_copy.attr('extension')}) %></legend>
+
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-8 columns">
+                    <input type="email" name="email" <%= (el)-> VALID.render(LANG.errors, voicemail_copy, 'email', el) %> placeholder="Please enter Email" />
+                    <div class=""><%= viewmodel.attr('errors.email_required')?'required':'' %></div>
+                </div>
+
+                <div class="large-2 columns toggle_container_js"></div>
+                <div class="large-2 columns">
+                    <input type="submit" value="Save" class="button2 right" />
+                </div>
+
+            </div>
+            
+        </div>
+    </fieldset>
+</form>

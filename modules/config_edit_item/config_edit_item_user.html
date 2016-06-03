@@ -1,0 +1,79 @@
+<div class="row overlay_js config_edit_item_user">
+    <div class="large-12 columns">
+
+
+        <div class="item_list_head">
+            <div class="row">
+
+                <div class="large-5 columns">
+
+                    <div class="row">
+                        <span class="first_name_js">
+                            <input type="text" name="first_name" <%= (el)-> VALID.render(LANG.errors, item, 'first_name', el) %> value="<%= item.attr('first_name') %>" />
+                        </span>
+                        <span class="last_name_js">
+                            <input type="text" name="last_name" <%= (el)-> VALID.render(LANG.errors, item, 'last_name', el) %> value="<%= item.attr('last_name') %>" />
+                        </span>
+                    </div>
+
+                </div>
+                
+                <div class="large-5 columns">
+
+                    <span class="email_js">
+                        <input type="text" name="email" <%= (el)-> VALID.render(LANG.errors, item, 'email', el) %> value="<%= item.attr('email') %>" />
+                    </span>
+                    <a href="javascript://" class="small button2 save_user_info_js "  >Save</a>
+
+                </div>
+
+
+                <div class="large-2 columns">
+                    <div class="delete_user_container right">
+                        <i class="delete_icon delete_js"></i><a href="javascript://" class="delete_js green_link">Delete</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="item_list_body">
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <ol>
+                        <%  var list = item.attr('bundles'), show_add_line = item.attr('show_add_line'),
+                                bundle_length = list.length;
+
+                            list.forEach(function(bundle_elem, idx, list){
+                                if (show_add_line && idx == list.length -1 ) {
+                                    bundle_elem.attr('show_add_line', true)
+                                }
+                                if (bundle_length == 1){
+                                    bundle_elem.attr('show_unassign_line', false)
+                                } else {
+                                    bundle_elem.attr('show_unassign_line', true)
+                                }
+                        %>
+
+
+                            <li data-idx="<%= idx %>" class="bundle_js bundle" <%= (el) -> renderer(el, idx, bundle_elem) %> >
+
+                            </li>
+                            
+
+
+                        <% }) %>
+                            
+                    </ol>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="row"></div>
+
+    </div>
+
+</div>

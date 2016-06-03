@@ -1,0 +1,31 @@
+<div class="row wizard_edit_form">
+    <form>
+        <div class="large-3 columns">
+            <div class="row">
+                <div class="large-6 columns">
+                    <input type="text" name="first_name" placeholder="First Name" <%= viewmodel.attr('admin_disabled') %>/>
+                </div>
+                <div class="large-6 columns">
+                    <input type="text" name="last_name" placeholder="Last Name" <%= viewmodel.attr('admin_disabled') %>/>
+                </div>
+            </div>
+        </div>
+
+        <div class="large-2 columns"><input type="text" name="email" placeholder="Email" <%= viewmodel.attr('admin_disabled')%>/></div>
+        <div class="large-1 columns"><input type="text" name="extension_number" placeholder="Extension"/></div>
+        <div class="large-3 columns">
+            <div class="row">
+                <div class="large-10 columns">
+                    <span class="phone_js" ><%= viewmodel.attr('device_name')%></span>
+                </div>
+                <div>
+                    <i class="phone_options_click_js"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="large-2 columns"><span class="phonenumber_js"><%= viewmodel.attr('phone_number')%></span>&nbsp;<a class="main_click_js">Change</a></div>
+    </form>
+</div>
+<div class="local_num_container_js" title="Select a Local Number"/>
+<div class="phone_container_js" title="Select Phone"/>

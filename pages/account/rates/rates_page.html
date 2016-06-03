@@ -1,0 +1,24 @@
+<div class="account_rates_page">
+    <div class="row">
+        <div class="title">View rates by country</div>
+        <div class="country_list_container"></div>
+        <table class="rates_result">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Rate/min(USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% viewmodel.attr('rates').forEach(function(rate){ %>
+                <tr>
+                    <td><%= rate.description %></td>
+                    <td>$<%= rate.ratepermin %></td>
+                </tr>
+
+                <% }) %>
+            </tbody>
+
+        </table>
+    </div>
+</div>

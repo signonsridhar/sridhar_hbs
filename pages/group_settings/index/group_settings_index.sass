@@ -1,0 +1,69 @@
+@import "_constants"
+
+
+.group_settings_index
+
+    background-color: #FFFFFF
+    padding-bottom: 25px
+
+    .columns
+        padding: 0 5px
+
+
+    .button-group
+
+        padding:
+            top: 15px
+            bottom: 15px
+        float: right
+
+        .button1
+            display: block
+            color: white
+            text-align: center
+            padding-top: 5px
+            font-size: 14px
+            height: 33px
+            width: 146px
+            background:
+                repeat: no-repeat
+                attachment: scroll
+                color: rgba(0, 0, 0, 0)
+                position: 0 0
+            &:hover
+                background-position: 0 -32px
+
+    .group_container
+        font-size: 13px
+        padding: 15px 15px 10px
+        background-color: $LIGHT_BLUE
+
+        .settings_tab_container
+            button.disable
+                display: none
+
+        .settings_edit_item
+            background-color: #FFFFFF
+            border-radius: 2px
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
+            padding: 15px
+
+            button, .button
+                margin-bottom: 0 !important
+
+            fieldset
+                border: none !important
+                margin: 0 !important
+                padding: 0 !important
+            
+                legend
+                    border-bottom: 1px solid #DDDDDD
+                    width: 100%
+                    color: $BODY_FONT_COLOR
+                    margin-bottom: 15px
+                    padding-bottom: 10px
+
+        .save_group_settings_button
+            margin-top: 20px
+
+

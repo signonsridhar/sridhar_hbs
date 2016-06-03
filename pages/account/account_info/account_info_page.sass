@@ -1,0 +1,83 @@
+@import "_constants"
+
+
+
+.account_info_content
+    
+    .general_info
+        margin-bottom: 20px
+        line-height: 24px
+
+
+        .plan_name
+            font-size: 24px
+            color: #000
+            line-height: 20px
+
+    .general_info_links
+        padding-bottom: 10px
+        .list
+            display: inline
+        .list:not(:last-child)
+            border-right: 1px solid #666666
+            padding-right: 10px
+        .list:not(:first-child)
+            padding-left: 10px
+
+        .blue_link
+            color: $GREEN_LINK
+
+
+
+
+    .boxed
+        background-color: white
+        border-radius: 2px
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
+        padding: 10px
+        margin-bottom: 7px
+        line-height: 20px
+
+        .monthly_payment
+            color: black
+            font-size: 24px
+            font-weight: bold
+            padding: 10px
+        .last_payment
+            color: black
+            font-size: 16px
+            font-weight: bold
+            padding: 0 10px
+
+        .bottom_hr
+            border-bottom: 1px solid #DDDDDD
+            padding-bottom: 10px
+            margin-bottom: 10px
+
+
+
+    .sub_boxed:last-child
+        margin-bottom: 0
+
+
+    .sub_boxed
+        padding: 0 5px
+        color: #000
+        margin-bottom: 30px
+
+        .blue_link
+            color: $GREEN_LINK
+
+        .right_arrow_blue
+            background:
+                image: url($SPRITE_IMAGES)
+                repeat: no-repeat
+                position: -178px 0
+            display: inline-block
+            height: 12px
+            width: 12px
+            margin: 0 0 -5px 0
+
+        .columns
+            padding: 0
+

@@ -1,0 +1,245 @@
+@import "_constants"
+
+
+
+.tab_header
+
+    .tab_head:checked + label
+        background-image: radial-gradient(ellipse farthest-side at center top , #EEEEEE 50%, #FFFFFF 110%)
+        box-shadow: inset 0 5px 0 $PRIMARY_COLOR
+
+        h4
+            color: #000000
+        span
+            color: $GREEN_LINK
+            margin-bottom: 20px
+
+    .tab_head:hover:not(:checked) + label
+        box-shadow: inset 0 5px 0 $GREEN_LINK
+
+.vertical
+    background-color: white
+    margin-left: 15px
+
+    input[type="radio"]
+        display: none
+        padding: 0
+
+    label
+        padding: 5px 10px
+        color: #444444
+        cursor: pointer
+        display: block
+        line-height: 2em
+        transition: background 0.4s ease-in-out 0s, height 0.2s linear 0s
+        margin-left: 10px
+        width: 105%
+        font-size: 11px
+
+    .tab_head:checked + label
+        $list: 5px 0 0 5px
+        @include border_radius($list...)
+        background-color: #D7E6EB
+        border-left: 5px solid #CCCCCC
+        color: black
+        a
+            color: black
+
+
+
+
+
+.left_nav_container_js
+    padding: 0
+
+
+
+
+.call_settings_horizontal
+    
+    .tab_head:checked + label
+        @include linear_gradient("center top", "#00CCFF", "#0099CC")
+        box-shadow: 0 2px 5px #333333 inset
+        color: white
+        float: left
+
+        span
+            color: white
+
+    .tab_head:not(:checked) + label
+        @include linear_gradient("center top", "#FFFFFF", "#DDDDDD")
+        color: #AAAAAA
+        float: left
+        font-size: 10px
+        font-weight: bold
+        margin: 0
+        padding: 7px 0
+        text-align: center
+        text-decoration: none
+
+        span
+            color: #666666
+
+    margin-bottom: 20px
+    padding-left: 10%
+    height: 30px
+    input[type="radio"]
+        display: none
+        padding: 0
+
+
+    label
+        padding: 7px 15px
+        color: #DBDBD3
+        cursor: pointer
+        display: inline-block
+        line-height: 1em
+        text-align: center
+        transition: background 0.4s ease-in-out 0s, height 0.2s linear 0s
+        width: 200px
+
+        &
+            border:
+                right: 1px solid #CCCCCC
+                top: 1px solid #CCCCCC
+                bottom: 1px solid #CCCCCC
+
+        &:first-of-type
+            border-left: 1px solid #CCCCCC
+            $list: 3px 0 0 3px
+            @include border_radius($list...)
+        &:last-of-type
+            $list: 0 3px 3px 0
+            @include border_radius($list...)
+
+        span
+            font-weight: normal
+            font-size: 11px
+
+.ringing_members_horizontal
+    
+    label
+        padding: 7px 10px
+        display: inline-block
+
+.default
+    background-color: white
+    margin-bottom: 20px
+    padding-left: 25px
+    height: 75px
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.06)
+    input[type="radio"]
+        display: none
+        padding: 0
+
+    label:last-child
+        border-right: 1px solid #EEEEEE
+
+
+    label
+        padding: 7px 15px
+        color: #DBDBD3
+        cursor: pointer
+        display: inline-block
+        line-height: 1em
+        text-align: center
+        transition: background 0.4s ease-in-out 0s, height 0.2s linear 0s
+        width: 225px
+        float: left
+        border:
+            left: 1px solid #EEEEEE
+
+        h4
+            color: #000000
+            text-align: left
+            padding-left: 5px
+            margin-bottom: 0px
+            font-weight: normal
+        span
+            color: #666666
+            display: block
+            text-align: left
+            padding-left: 5px
+            margin-bottom: 15px
+            font-weight: normal
+            font-size: 11px
+
+
+
+.left_nav
+    label
+        i
+            background:
+                image: url($SPRITE_IMAGES)
+                repeat: no-repeat
+            display: inline-block
+            height: 26px
+            width: 30px
+            margin: 0 0 -5px 0
+
+        .all
+            background-position: -23px 10px
+        .users
+            background-position: 6px -138px
+        .groups
+            background-position: -28px -138px
+        .main
+            background-position: -55px -278px
+        .members
+            background-position: -28px -138px
+        .call_settings
+            background-position: -28px -358px
+        i.unassigned
+            background-image: url("img/icon_unassigned.png")
+            background-position: 7px 8px
+            background-repeat: no-repeat
+        
+
+        a,
+        span
+            padding:
+                left: 10px
+            color: #444444
+            text-transform: uppercase
+            font-size: 11px
+
+
+.left_nav.config
+    label
+        i
+            &.all
+                background-position: -23px 10px
+            &.users
+                background-position: 6px -138px
+            &.groups
+                background-position: -28px -138px
+            &.main
+                background-position: -55px -278px
+
+
+.left_nav.settings
+    label
+        i
+            &.main
+                background-position: -55px -278px
+            &.user,
+            &.me
+                background-position: 6px -138px
+            &.group
+                background-position: -28px -138px
+            
+.left_nav.account
+    label
+        i
+            &.account_info
+                background-image: url("img/icon_plan.png")
+                background-position: 2px 7px
+            &.payment_method
+                background-image: url("img/icon_payment.png")
+                background-position: 1px 7px
+            &.billing_history
+                background-image: url("img/icon_bill_history.png")
+                background-position: 2px 6px
+            &.rates
+                background-image: url("img/icon_rates.png")
+                background-position: 2px 8px

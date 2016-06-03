@@ -1,0 +1,49 @@
+<div class="row wizard_index">
+
+    <div class="row">
+        <div class="cache" style="display:none"></div>
+        <div class="large-12 columns content_container wizard_content_container_js">
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="large-6 large-centered columns">
+            <div class="row">
+
+                <div class="large-6 columns">
+                    <div class="buttons_container cf right">
+                        <% if (curr_step() == 2 && curr_step() < total_steps) { %>
+                        <a class="button step_button prev_js enabled" href="#!/wizard/step_<%= curr_step() - 1%>">
+                            <span class="step_text"><%= LANG.buttons['prev'] %></span>
+                        </a>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="large-6 columns">
+                    <div class="buttons_container cf">
+
+                        <% if (curr_step() < total_steps) { %>
+
+                            <a class="button step_button next_js <%= validity()?'enabled_js':'disabled_js' %>" href="#!/wizard/step_<%= curr_step() + 1%>">
+                                <span class="step_text"><%= LANG.buttons[ 'next'][curr_step()-1] %></span>
+                            </a>
+
+                        <% } else if(curr_step() == total_steps) { %>
+                            <a class="button step_button next_js" href="#!/config/">
+                                <span class="step_text"><%= LANG.buttons[ 'next'][curr_step()-1] %></span>
+                            </a>
+                        <% }%>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

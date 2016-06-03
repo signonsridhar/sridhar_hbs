@@ -1,0 +1,9 @@
+<select name="<%= attr %>">
+    <option value="ext">Ext</option>
+    <% for(var i = 0; i < COUNTRIES.length; i++){
+            var country = COUNTRIES[i];
+    %>
+    <option data-cntry_prefix="<%= country.countryCode %>" value="<%= country[mode_key] %>"><%= country.countryName %> (<%= country.countryPhoneNumberCode %>)</option>
+    <% } %>
+
+</select>

@@ -1,0 +1,17 @@
+<% if (viewmodel.attr('deleted_group')) { %>
+    <span class="deleted_group_msg"><%= LANG.removed_grp_msg %> "<%= viewmodel.attr('deleted_group_member_extension') %> <%= viewmodel.attr('deleted_group_member_name') %>" <%= LANG.from_grp_msg %></span>
+<% } else { %>
+
+    
+    <div class="large-10 columns">
+        <span class="icon"></span>
+        <span name="extension"><%= member.attr('member_extension_number') %></span> <span name="first_name"><%= member.attr('member_first_name') %></span>
+    </div>
+    <div class="large-2 columns">
+        <div class="right">
+            <i class="delete_icon group_member_delete_click_js"></i>
+            <a class="group_member_delete_click_js">delete</a>
+        </div>
+    </div>
+
+<% }%>

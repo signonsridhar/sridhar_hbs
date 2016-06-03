@@ -1,0 +1,86 @@
+
+<div class="dt_navbar_main">
+    <div class="dt_navbar_inner">
+        <div class="number_selector_search_form">
+            <div class="row">
+                <form>
+
+                    <div class="large-9 large-centered columns">
+
+                        <ul class="inline-list">
+                            <li><input name="area_code" type="text" placeholder="Area Code" maxlength=3 value="" /></li>
+                            <li>Or</li>
+                            <li><input name="city" type="text" value="" placeholder="City" /></li>
+                            <li class="state_dropdown_container"></li>
+                            <li><input type="submit" class="button2 right" value="Search" /></li>
+                        </ul>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backend_error"></div>
+<div class="phone_num_selector_js">
+    <div class="number_list_js">
+
+        <div class="phone_numbers_top_container">
+
+            <ul class="large-block-grid-2">
+                <%
+                if (viewmodel.attr('show_spinner')){
+                %>
+                    <span class="phone_num_spinner"><img class="spinner" src="/etc/spinners/loading.gif"></span>
+                <%
+                } else {
+                %>
+                    <%
+                    viewmodel.attr('phone_list').forEach(function(ph_elem, idx, list){
+                    %>
+
+                    <li class="choice_js" data-index='<%=idx %>' data-number="<%= ph_elem.attr('phonenumber')%>">
+
+                        <div class="row">
+                            <div class="large-12 columns">
+
+                                <div class="number_list_row_container">
+                                    <div class="row">
+                                        <div class="large-6 columns"><span class="city_js"><%= ph_elem.attr('city')%></span></div>
+                                        <div class="large-6 columns"><span class="phone_number"><%= ph_elem.attr('phonenumber')%></span></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <% }) %>
+                    <%
+                    if (viewmodel.attr('phone_list').length == 0) {
+                    %>
+                        <div class="row">
+                            No available numbers
+                        </div>
+                    <% }%>
+
+                <%
+                }
+                %>
+
+            </ul>
+
+        </div>
+        
+
+
+    </div>
+</div>
+
+<br/>
+
+
+

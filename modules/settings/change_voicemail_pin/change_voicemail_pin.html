@@ -1,0 +1,22 @@
+<form class="row settings_edit_item">
+    <fieldset>
+        <legend><%= _.template(LANG.title, {ext: voicemail_pin.attr('extension')}) %></legend>
+        
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-4 columns"><%= _.template(LANG.info, {ext: voicemail_pin.attr('extension')}) %></div>
+                <div class="large-3 columns"><input type="password" name="new_pin" <%= (el)-> VALID.render(LANG.errors, voicemail_pin, 'new_pin', el) %> placeholder="<%= _.template(LANG.enter_pin, {}) %>" /></div>
+                <div class="large-3 columns"><input type="password" name="confirm_pin" <%= (el)-> VALID.render(LANG.errors, voicemail_pin, 'confirm_pin', el) %> placeholder="<%= _.template(LANG.confirm_pin, {}) %>" /></div>
+                <div class="large-2 columns"><input type="submit" class="button2 right" value="<%= _.template(LANG.change, {}) %>" /></div>
+            </div>
+            <% if(viewmodel.attr('errors.pin')) { %>
+            <div class="row">
+                <div class="large-3 columns error right">
+                    <%= viewmodel.attr('errors.pin') %>
+                </div>
+            </div>
+            <% } %>
+        </div>
+
+    </fieldset>
+</form>

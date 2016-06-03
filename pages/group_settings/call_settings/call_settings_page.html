@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="row" style="margin-bottom: 10px">
+        <strong><%= viewmodel.attr('group_name') %> Group Call Settings </strong>
+    </div>
+    <div class="row" style="margin-bottom: 5px">
+        Select which options will be heard by caller to your <%= viewmodel.attr('group_name') %> group.
+    </div>
+
+    <% if(viewmodel.attr('is_main_group')) { %>
+        <div class="main_group_tabs_container_js">
+        </div>
+    <% } %>
+    <div class="row">
+        <div class="enable_auto_attendant_container_js"></div>
+    </div>
+    <div class="row">
+        <div class="enable_custom_greeting_container_js"></div>
+    </div>
+    <div class="row">
+        <div class="enable_group_ring_container_js"></div>
+    </div>
+    <div class="row">
+        <div class="enable_vm_forward_email_container_js"></div>
+    </div>
+    <div class="row">
+        <div class="vmpin_container_js"></div>
+    </div>
+
+</div>

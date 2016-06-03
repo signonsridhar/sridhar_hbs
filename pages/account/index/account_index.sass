@@ -1,0 +1,54 @@
+@import "_constants"
+
+
+$GROUP_BUTTONS: "#{$BASE_URL}pages/account/index/img/account_buttons.png"
+
+.account_index
+
+    background-color: white !important
+    padding-bottom: 25px
+    min-height: 100%
+
+    .columns
+        padding: 0
+    
+    .account_container
+        background-color: $LIGHT_BLUE
+        font-size: 13px
+        padding: 15px
+        min-height: 300px
+
+        .spinner_container
+            text-align: center
+            padding-top: 60px
+
+    .button-group
+
+        padding:
+            top: 15px
+            bottom: 15px
+        float: right
+
+        .button1
+            display: block
+            color: white
+            text-align: center
+            padding-top: 5px
+            font-size: 14px
+            height: 33px
+            width: 146px
+            background:
+                image: url($GROUP_BUTTONS)
+                repeat: no-repeat
+                attachment: scroll
+                color: rgba(0, 0, 0, 0)
+                position: 0 0
+            &:hover
+                background-position: 0 -32px
+
+.credit_card_updated_js
+    background-color: #fffac2
+    font-size: 13px
+    padding: 15px
+    margin-bottom: 10px
+    display: none

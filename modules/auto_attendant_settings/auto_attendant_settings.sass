@@ -1,0 +1,52 @@
+@import "_constants"
+
+
+$GROUP_BUTTONS: "#{$BASE_URL}pages/account/index/img/account_buttons.png"
+
+
+.group_container
+
+    .boxed
+        background-color: #FFFFFF
+        border-radius: 2px
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5)
+        line-height: 20px
+        margin-bottom: 10px
+        padding: 10px 20px
+
+        .title
+            font-weight: bold
+            margin-bottom: 20px
+
+        .toggle_container_js
+            padding-top: 6px
+            border-bottom: 1px solid #DDDDDD
+            margin-bottom: 5px
+
+            .title
+                font-weight: bold
+
+
+
+
+.button1
+    border: 0
+    display: block
+    color: white
+    text-align: center
+    padding-top: 0px
+    font-size: 12px
+    height: 25px
+    width: 55px
+    $list: 5px 5px 3px
+    @include border_radius($list...)
+    background:
+        image: url($GROUP_BUTTONS)
+        repeat: no-repeat
+        attachment: scroll
+        color: rgba(0, 0, 0, 0)
+        position: 0 -32px
+    &:hover
+        background-position: 0 0
+
+

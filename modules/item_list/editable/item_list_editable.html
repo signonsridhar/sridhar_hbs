@@ -1,0 +1,11 @@
+<div class="row item_list item_list_editable">
+    <ol>
+        <% if (items.attr('length')) {
+        items.forEach(function(item, idx, list){
+        var mode = viewmodel.attr('edit').indexOf(idx) >= 0? 'edit': 'view';
+        %>
+        <li data-idx="<%= idx %>" class="item" <%= (el) -> renderer(el, mode, item, idx, list) %>></li>
+        <% }) %>
+        <% } %>
+    </ol>
+</div>

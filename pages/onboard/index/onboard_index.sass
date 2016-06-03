@@ -1,0 +1,180 @@
+@import "_constants"
+
+
+$ARROW_SPRITE: "#{$BASE_URL}pages/onboard/index/img/arrow_sprite.png"
+
+.onboard_index
+
+    .cf
+        &:before,
+        &:after
+            content: ""
+            display: table
+        &:after
+            clear: both
+
+    .forms_container
+
+        .content_container
+            margin-top: 30px
+
+            .company_main_selector_js
+                margin-bottom: 50px
+                padding: 10px 30px 0
+                h3
+                    font-size: 3.5em
+                    font-weight: normal
+                    line-height: 0.75em
+
+                .main_click_js,
+                .main_toll_click_js
+                    color: $GREEN_LINK !important
+                span
+                    font-size: 15px
+    
+    .buttons_container
+        a
+            color: #FFFFFF
+        
+        .arrow_right,
+        .arrow_left,
+        .arrow_complete,
+        .arrow_right_disabled,
+        .arrow_left_disabled,
+        .arrow_complete_disabled
+            background:
+                image: url($ARROW_SPRITE)
+                repeat: no-repeat
+                attachment: scroll
+                color: rgba(0, 0, 0, 0)
+            display: block
+            height: 53px
+            width: 200px
+            margin: 30px 10px
+            & .stepNumber
+                font-size: 42px
+                line-height: 53px
+                color: white
+                font: left
+            & .stepText
+                color: white
+                display: inline-block
+                font-size: 16px
+                line-height: 1.1em
+                padding: 18px 75px
+                width: 125px
+        
+        .arrow_right.enabled_js
+            float: right
+            background-position: 0 -8px
+            &:hover
+                background-position: 0 -138px
+            .stepNumber
+                margin: 0 5px 0 15px
+
+        .arrow_right.disabled_js
+            float: right
+            cursor: default
+            background-position: 0 -378px
+            &:hover
+                background-position: 0 -378px
+            .stepNumber
+                margin: 0 5px 0 15px
+        
+        .arrow_left
+            float: left
+            background-position: 0 -68px
+            &:hover
+                background-position: 0 -198px
+            .stepNumber
+                margin: 0 5px 0 30px
+
+        .arrow_left.disabled_js
+            float: right
+            cursor: default
+            background-position: 0 -438px
+            &:hover
+                background-position: 0 -438px
+            .stepNumber
+                margin: 0 5px 0 15px
+
+        .arrow_complete
+            float: left
+            background-position: 0 -317px
+            &:hover
+                background-position: 0 -259px
+            .stepNumber
+                margin: 0 5px 0 30px
+
+        .arrow_complete.disabled_js
+            float: right
+            cursor: default
+            background-position: 0 -494px
+            &:hover
+                background-position: 0 -494px
+            .stepNumber
+                margin: 0 5px 0 15px
+
+    .buttons_divider
+        width: 95%
+        margin: 0 auto
+
+        hr
+            margin: 0
+
+footer
+    font-size: 11px !important
+    position: relative
+    color: #666666 !important
+
+    .mini_footer
+        background: none repeat scroll 0 0 #333333
+        padding: 5px 10px
+        border-radius: 0 0 5px 5px
+
+        ul
+            margin: 0
+
+        .links
+            li
+                display: block
+                float: left
+                font-family: $FOOTER_FONT_FAMILY
+                font-size: 0.875em
+                font-weight: 700
+                margin-left: 6px
+                text-transform: uppercase
+
+                a
+                    color: #666666
+                    padding: 3px 6px
+        p
+            color: #666666
+
+        .copyright
+            padding-top: 5px
+
+    .footer_top.bg_magenta
+        background: none repeat scroll 0 0 #F85F9D
+        
+        .property
+            text-align: center
+
+            .property_info
+                padding-top: 20px
+            h3
+                a
+                    color: #FFFFFF
+                    font-size: 23px
+                    font-weight: bold
+                    margin-bottom: 10px
+            p
+                color: #FFFFFF
+                font-size: 13px
+                line-height: 21px
+
+    .footer_top
+        color: #FFFFFF
+        font-family: $FOOTER_FONT_FAMILY
+        padding: 40px 0
+

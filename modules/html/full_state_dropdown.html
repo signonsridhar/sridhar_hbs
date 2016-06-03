@@ -1,0 +1,6 @@
+<select  name="state">
+    <option value="-1" selected="selected">State</option>
+    <% for(var i=0; i<states.length; i++) {%>
+        <option value='<%= states[i].stateCode %>'><%= states[i].stateName %></option>
+    <% } %>
+</select>

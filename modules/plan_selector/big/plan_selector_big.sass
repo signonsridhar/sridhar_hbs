@@ -1,0 +1,138 @@
+@import constants
+
+
+
+
+.onboard_index_home
+    background-image: url($ONBOARD_HOME_IMG)
+    height: $ONBOARD_HEIGHT
+    
+    .social_buttons
+        position: absolute
+        bottom: 0
+        right: 40px
+        background-color: white
+        padding: 10px
+        $list: 7px, 7px, 0, 0
+        @include border_radius($list...)
+        background-image: url($SOCIAL_BUTTONS)
+        width: 145px
+        height: 30px
+
+
+
+
+.plan_selector_container
+    padding:
+        top: 50px
+
+
+
+
+.plan_selector_big
+    
+    @include box_shadow("-5px 5px 35px -6px gray")
+    .header
+        position: relative
+        background-color: $SECONDARY_COLOR
+        $list: 7px
+        @include border_radius($list...)
+        border-bottom-left-radius: 0px
+        border-bottom-right-radius: 0px
+        padding-bottom: 30px
+
+        h3
+            padding-top: 20px
+            color: white
+            text-align: center
+            margin-bottom: 5px
+            font-weight: normal
+
+        .benefit_list
+            display: block
+            margin-left: auto
+            margin-right: auto
+            & > div
+                &.text
+                    display: inline-block
+                    width: 100px
+                    font-size: 11px
+                    color: white
+                    border: 1px solid #CCCCCC
+                        radius: 3px
+                    padding: 5px
+                    text-align: center
+
+                    &:first-child
+                        margin-left: 15px
+                &.plus
+                    display: inline-block
+                    font-size: 30px
+                    font-weight: bold
+                    color: $BASE_COLOR
+    .content
+
+        background-color: white
+        $list: 7px
+        @include border_radius($list...)
+        border-top-right-radius: 0px
+        border-top-left-radius: 0px
+
+        & > *
+            display: block
+            width: 100%
+            margin-left: auto
+            margin-right: auto
+            text-align: center
+            margin-top: 0px
+            margin-bottom: 0px
+            line-height: 1
+
+        & .total
+            font-size: 100px
+            color: $BASE_COLOR
+
+        & .per_month_per_user
+            line-height: 10px
+            font-size: 16px
+            color: $BASE_COLOR
+            margin-top: 5px
+
+        & .intro_price
+            margin-top: 10px
+            font-size: 39px
+            font-weight: normal
+
+
+        & .slider_container,
+        & .prepaid_months
+            margin-top: 10px
+            margin-bottom: 10px
+            text-align: center
+            width: auto
+            padding: 5px
+            .info
+                padding-top: 5px
+            .info,
+            .units,
+                font-size: 11px
+            .slider
+                font-size: 15px
+            .result
+                background-color: #EEEEEE
+                width: 50px
+                margin:
+                    left: 15px
+                    top: -10px
+                padding: 8px
+                $list: 3px
+                @include border_radius($list...)
+            &:first-child
+                margin-top: 30px
+
+        .get_it_now_container
+            padding: 10px
+            .button
+                text-transform: uppercase
+                font-weight: normal
+

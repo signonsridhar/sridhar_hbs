@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="large-12 columns">
+        
+        <div class="row">
+            <div class="large-8 columns large-centered">
+                <h2>
+                    <%= LANG.order_info %>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row setup_plan_img">
+            <div class="large-12 large-centered">
+                <a class="setup_password_link_js">
+                    <img src="pages/onboard/step_5/img/phone.png" />
+                </a>
+            </div>
+        </div>
+
+        <div class="row setup_plan">
+            <div class="large-8 columns large-centered">
+                <a class="setup_password_link_js">
+                    <h4>
+                        Now let's set up your new phone system <i class="right_arrow_magenta"> </i>
+                    </h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-8 large-centered columns plan_confirmation">
+                <div class="row">
+                    <div class="large-8 columns large-centered">Your account was charged $<%= viewmodel.attr('summary.total_amount_after_taxes') %></div>
+                    <div class="large-8 columns large-centered">A receipt and instructions has been sent to <span class="tenant_email"><%= admin.email  %></span></div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>

@@ -1,0 +1,258 @@
+$BASE_COLOR: rgb(239, 0, 140)
+$BASE_URL: "/"
+
+
+
+$PRIMARY_COLOR: #E20074
+$PRIMARY_COLOR_LIGHT: #F85F9D
+$SECONDARY_COLOR: #6A6A6A
+
+
+$ALERT_COLOR: #FF0000
+$SUCCESS_COLOR: #42D374
+
+
+$BODY_FONT_COLOR: #737373
+$HEADER_FONT_COLOR: #363636
+$HEADER_FONT_DARK_GREEN: #005A6B
+
+
+$GREEN_LINK: #008DA8
+$LIGHT_BLUE: #D7E6EB
+$LIGHT_BLUE2: #DCF0F7
+
+$BLUE1: #00CCFF
+$BLUE2: #0099CC
+
+$NAVBAR-MAIN-HEIGHT: 94px
+$NAVBAR_MAIN_WIDTH: 1140px
+
+
+$DT_NAVBAR_MAIN_HEIGHT: 64px
+
+
+$LOGO_URL: "#{$BASE_URL}libs/foundation-4.3.2.custom/img/tmo-logo156.png"
+$SPRITE_IMAGES: "#{$BASE_URL}libs/foundation-4.3.2.custom/img/pbx_sprite.png"
+
+
+$SOCIAL_BUTTONS: "#{$BASE_URL}pages/plans/index/img/social_buttons.png"
+
+
+$FONT_FAMILY: "\"Helvetica Neue\",\"Helvetica\",Helvetica,Arial,sans-serif"
+$FOOTER_FONT_FAMILY: "Proxima Nova","proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif
+
+
+$ONBOARD_HOME_IMG: "http://placehold.it/1240x600"
+$ONBOARD_HOME_IMG: "#{$BASE_URL}libs/foundation-4.3.2.custom/img/tmobile_girl.png"
+
+
+$ONBOARD_HEIGHT: 600px
+
+
+$CROSS_BROWSER_PREFIX: "", "-moz-", "-webkit-", "-ms-", "-o-"
+
+
+
+
+
+
+@mixin display_table()
+    content: ""
+    display: table
+    line-height: 0
+
+
+@mixin resolution()
+    width: #{$NAVBAR-MAIN-WIDTH}
+
+
+
+
+@mixin border_radius($tl, $tr:"", $br:"", $bl:"", $optional:"")
+    
+    
+    @if $tr == ""
+        @if $optional != ""
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl unquote($optional)
+        @else
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl
+    
+    @else if $br == ""
+        @if $optional != ""
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl $tr unquote($optional)
+        @else
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl $tr
+    
+    @else if $bl == ""
+        @if $optional != ""
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl $tr $br unquote($optional)
+        @else
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl $tr $br
+    
+    @else
+        @if $optional != ""
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl $tr $br $bl unquote($optional)
+        @else
+            @each $prefix in $CROSS_BROWSER_PREFIX
+                #{$prefix}border-radius: $tl $tr $br $bl
+    
+    
+
+@mixin linear_gradient($dir, $from, $to)
+    
+    $webkit_dir_from: ""
+    $webkit_dir_to: ""
+	
+    @if ($dir == "left")
+        $webkit_dir_from: "left center"
+        $webkit_dir_to: "right center"
+    
+    @else if ($dir == "right")
+        $webkit_dir_from: "right center"
+        $webkit_dir_to: "left center"
+    
+    @else if ($dir == "top")
+        $webkit_dir_from: "center top"
+        $webkit_dir_to: "center bottom"
+    
+    @else if ($dir == "bottom")
+        $webkit_dir_from: "center bottom"
+        $webkit_dir_to: "center top"
+    
+    @else if ($dir == "left top")
+        $webkit_dir_from: "left top"
+        $webkit_dir_to: "right bottom"
+    
+    @else if ($dir == "right top")
+        $webkit_dir_from: "right top"
+        $webkit_dir_to: "left bottom"
+    
+    @else if ($dir == "center top")
+        $webkit_dir_from: "center top"
+        $webkit_dir_to: "center bottom"
+    
+    background-image: -webkit-gradient(linear, unquote($webkit_dir_from), unquote($webkit_dir_to), from(unquote($from)), to(unquote($to)))
+    
+    @each $prefix in $CROSS_BROWSER_PREFIX
+        background-image: #{$prefix}linear-gradient(unquote($dir), unquote($from), unquote($to))
+
+    
+
+@mixin steps_switch($state)
+
+    $circle: ".step_1"
+    $bar: ".step_1"
+    @for $i from 1 through $state
+        @if $i > 1 
+            $circle: $circle + ", .step_#{$i}"
+            $bar: $bar + ", .step_#{$i}"
+
+    
+    
+    #{$circle}
+        .onboardingStep
+            background-color: $PRIMARY_COLOR
+            color: white
+        .caption
+            font-weight: bold
+            color: #333333
+
+    #{$bar}
+        .stepsBar
+            background: none repeat scroll 0 0 #F85F9D !important
+            z-index: 60
+    
+
+
+
+
+@mixin small_arrow_right()
+    @extend .sprite
+    height: 30px
+    width: 50px
+    float: right
+    background-position: -60px -700px
+    &:hover
+        background-position: -60px -700px
+
+
+@mixin small_arrow_left()
+    @extend .sprite
+    height: 30px
+    width: 50px
+    float: left
+    background-position: 0 -700px
+    &:hover
+        background-position: 0 -700px
+
+            
+
+
+@mixin box_shadow($param)
+    @each $prefix in $CROSS_BROWSER_PREFIX
+        #{$prefix}box-shadow: unquote($param)
+        
+        
+
+
+.input_style
+    input[type=text],
+    input[type=password],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"]
+        height: 1.75em !important
+        $list: 3px, 3px, 3px, 3px, "!important"
+        @include border_radius($list...)
+        margin: 0 0 0.6em !important
+        padding: 0.3em 0.5em
+        color: rgba(0, 0, 0, 1) !important
+        font-size: 0.855em !important
+    select
+        margin: 0 0 0.6em !important
+        font-size: 0.8em
+        padding: 2px
+
+
+.sprite
+    background:
+        image: url($SPRITE_IMAGES)
+            repeat: no-repeat
+            attachment: scroll
+            color: rgba(0, 0, 0, 0)
+    display: block
+
+
+.button_green
+    display: block
+    color: white
+    padding: 5px 7px
+    height: inherit
+    width: inherit
+    font-size: 11px
+    line-height: 12px
+    border-radius: 0
+    @include linear_gradient("center top", "#67B13A", "#467928")
+    background-color: rgba(0, 0, 0, 0)
+    &:hover
+        @include linear_gradient("center top", "#467928", "#67B13A")
+
+
+
+
+

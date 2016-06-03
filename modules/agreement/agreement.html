@@ -1,0 +1,17 @@
+<div class="row">
+    <%  var enable = viewmodel.attr('enable'); %>
+    <% if (enable.indexOf('tos') >= 0) { %>
+    <label>
+        <input type="checkbox" name="tos" value="tos" <%= (el)-> VALID.render(LANG.errors, viewmodel, 'tos', el) %> />
+        <%==LANG['tos'] %>
+    </label>
+    <% } %>
+
+    <% if (enable.indexOf('e911') >= 0) { %>
+    <label>
+        <input type="checkbox" name="e911" value="e911" <%= (el)-> VALID.render(LANG.errors, viewmodel, 'e911', el) %> />
+        <%==LANG['e911'] %>
+    </label>
+    <% } %>
+
+</div>

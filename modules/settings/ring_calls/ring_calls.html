@@ -1,0 +1,10 @@
+<form class="row settings_edit_item">
+    <div class="row toggle_container_js">
+        <div class="large-10 columns ">
+            <%= _.template(LANG.title, {}) %> <%= viewmodel.attr('extension') %> <%= _.template(LANG.group_calls, {name:name}) %>
+        </div>
+        <div class="large-2 columns">
+            <div class="group_ring_switch_js right"></div>
+        </div>
+    </div>
+</form>
